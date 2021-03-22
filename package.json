@@ -2,7 +2,7 @@
   "name": "black-dashboard-react",
   "version": "1.2.0",
   "private": true,
-  "homepage": "https://demos.creative-tim.com/black-dashboard-react/#/admin/dashboard",
+  "homepage": "https://darkmarthur.github.io/RallyDataScienceGov",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.1",
     "bootstrap": "4.5.3",
@@ -25,6 +25,8 @@
     "reactstrap": "8.7.1"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build && gulp licenses",
     "test": "react-scripts test --env=jsdom",
@@ -49,6 +51,7 @@
     "typescript": "4.1.2"
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "gulp": "4.0.2",
     "gulp-append-prepend": "1.0.8"
   }
