@@ -1,7 +1,7 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
+import { BrowserRouter, HashRouter, Route, Switch, Redirect } from "react-router-dom";
 
 import AdminLayout from "layouts/Admin/Admin.js";
 import RTLLayout from "layouts/RTL/RTL.js";
@@ -17,13 +17,13 @@ import BackgroundColorWrapper from "./components/BackgroundColorWrapper/Backgrou
 ReactDOM.render(
   <ThemeContextWrapper>
     <BackgroundColorWrapper>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route basename={process.env.PUBLIC_URL} path="/" render={(props) => <AdminLayout {...props} />} />
           {/* <Route path="/rtl" render={(props) => <RTLLayout {...props} />} /> */}
           {/* <Redirect from="/" to="/inicio" /> */}
         </Switch>
-      </BrowserRouter>
+      </HashRouter>
     </BackgroundColorWrapper>
   </ThemeContextWrapper>,
   document.getElementById("root")
