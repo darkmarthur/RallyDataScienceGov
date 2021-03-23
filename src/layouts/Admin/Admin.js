@@ -67,7 +67,7 @@ function Admin(props) {
       if (prop.layout === "/admin") {
         return (
           <Route
-            path={process.env.PUBLIC_URL + prop.path}
+            path={prop.path}
             component={prop.component}
             key={key}
           />
@@ -107,7 +107,7 @@ function Admin(props) {
               />
               <Switch>
                 {getRoutes(routes)}
-                <Redirect from="*" to={process.env.PUBLIC_URL + "/inicio"} />
+                <Redirect from="*" to="/inicio" />
               </Switch>
               {/* {
                 // we don't want the Footer to be rendered on map page

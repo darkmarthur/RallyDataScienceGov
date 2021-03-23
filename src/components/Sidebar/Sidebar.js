@@ -113,7 +113,7 @@ function Sidebar(props) {
                     key={key}
                   >
                     <NavLink
-                      to={process.env.PUBLIC_URL +  prop.path}
+                      to={prop.path}
                       className="nav-link"
                       activeClassName="active"
                       onClick={props.toggleSidebar}
