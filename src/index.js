@@ -17,7 +17,7 @@ import BackgroundColorWrapper from "./components/BackgroundColorWrapper/Backgrou
 ReactDOM.render(
   <ThemeContextWrapper>
     <BackgroundColorWrapper>
-      <BrowserRouter basename={'/RallyDataScienceGov'}>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route path="/" render={(props) => <AdminLayout {...props} />} />
           {/* <Route path="/rtl" render={(props) => <RTLLayout {...props} />} /> */}
