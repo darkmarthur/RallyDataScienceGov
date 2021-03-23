@@ -19,7 +19,7 @@ ReactDOM.render(
     <BackgroundColorWrapper>
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route path="/" render={(props) => <AdminLayout {...props} />} />
+          <Route basename={process.env.PUBLIC_URL} path="/" render={(props) => <AdminLayout {...props} />} />
           {/* <Route path="/rtl" render={(props) => <RTLLayout {...props} />} /> */}
           {/* <Redirect from="/" to="/inicio" /> */}
         </Switch>
