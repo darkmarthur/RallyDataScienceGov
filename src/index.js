@@ -17,13 +17,13 @@ import BackgroundColorWrapper from "./components/BackgroundColorWrapper/Backgrou
 ReactDOM.render(
   <ThemeContextWrapper>
     <BackgroundColorWrapper>
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
         <Switch>
-          <Route basename={process.env.PUBLIC_URL} path="/" render={(props) => <AdminLayout {...props} />} />
+          <Route path={process.env.PUBLIC_URL + '/'} render={(props) => <AdminLayout {...props} />} />
           {/* <Route path="/rtl" render={(props) => <RTLLayout {...props} />} /> */}
-          {/* <Redirect from="/" to="/inicio" /> */}
+          <Redirect from="/" to={process.env.PUBLIC_URL + "/inicio"} />
         </Switch>
-      </HashRouter>
+      </BrowserRouter>
     </BackgroundColorWrapper>
   </ThemeContextWrapper>,
   document.getElementById("root")
