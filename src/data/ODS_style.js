@@ -1,4 +1,4 @@
-[ {
+const nodeStyles =  [ {
   "format_version" : "1.0",
   "generated_by" : "cytoscape-3.8.2",
   "target_cytoscapejs_version" : "~2.1",
@@ -110,3 +110,5 @@
     }
   } ]
 } ]
+
+export default [...nodeStyles];
