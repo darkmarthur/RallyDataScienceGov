@@ -8,7 +8,6 @@ import graphStyle from "../data/ODS_style.json";
 import Plot from "react-plotly.js";
 import Cytoscape from "cytoscape";
 // import BubbleSets from 'cytoscape-bubblesets';
-
 // import COSEBilkent from "cytoscape-cose-bilkent";
 // import cola from "cytoscape-cola";
 import CytoscapeComponent from "react-cytoscapejs";
@@ -81,6 +80,7 @@ function Reto3() {
                     </option>
                   ))}
                 </select> */}
+                {/* 15161A */}
                 <div style={{ backgroundColor: "#fff", margin: 40 }}>
                   {testNetworkData != null ? (
                     <CytoscapeComponent
@@ -91,11 +91,11 @@ function Reto3() {
                         nodes: testNetworkData.elements.nodes,
                         edges: testNetworkData.elements.edges,
                       })}
+                      stylesheet={graphStyle.style}
                       layout={layout}
                       // autounselectify={true}
                       style={{ width: "100%", height: "1000px" }}
                       // stylesheet={graphStyle.style}
-                      stylesheet={graphStyle.style}
                       // style={graphStyle}
                     />
                   ) : null}
