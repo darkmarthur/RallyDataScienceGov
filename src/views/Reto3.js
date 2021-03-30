@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Plot from "react-plotly.js";
 import ReactDOM from "react-dom";
 import CytoscapeComponent from "react-cytoscapejs";
-import testNetworkData from '../data/VINC_PEF_2021.json'
+import testNetworkData from "../data/VINC_PEF_2021.json";
 
 // reactstrap components
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
@@ -21,7 +21,7 @@ function Reto3() {
   //   //     }
   //   //   })
   //   // return () => mounted = false;
-    console.log("json", testNetworkData);
+  console.log("json", testNetworkData);
   // }, []);
 
   const elements = [
@@ -77,7 +77,28 @@ function Reto3() {
                         cy = cy.center();
                       }}
                       zoomingEnabled={false}
-                      elements={elements}
+                      // elements={elements}
+                      elements={CytoscapeComponent.normalizeElements({
+                        nodes: [
+                          {
+                            data: { id: "one", label: "Node 1" },
+                            position: { x: 0, y: 0 },
+                          },
+                          {
+                            data: { id: "two", label: "Node 2" },
+                            position: { x: 100, y: 0 },
+                          },
+                        ],
+                        edges: [
+                          {
+                            data: {
+                              source: "one",
+                              target: "two",
+                              label: "Edge from Node1 to Node2",
+                            },
+                          },
+                        ],
+                      })}
                       style={{ width: "100%", height: "1000px" }}
                     />
                   ) : null}
