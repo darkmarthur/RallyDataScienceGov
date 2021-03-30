@@ -1,11 +1,19 @@
-import React, { useEffect, useState } from "react";
-import Plot from "react-plotly.js";
-import ReactDOM from "react-dom";
-import CytoscapeComponent from "react-cytoscapejs";
 import testNetworkData from "../data/VINC_PEF_2021.json";
+import testData from "../data/test.json";
+import ReactDOM from "react-dom";
+import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
+
+import Plot from "react-plotly.js";
+import Cytoscape from 'cytoscape';
+import COSEBilkent from 'cytoscape-cose-bilkent';
+import React, { useEffect, useState } from "react";
+import CytoscapeComponent from "react-cytoscapejs";
+Cytoscape.use(COSEBilkent);
+
+
+
 
 // reactstrap components
-import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
 function Reto3() {
   const [networkData, setNetwork] = useState({});
@@ -22,7 +30,10 @@ function Reto3() {
   //   //   })
   //   // return () => mounted = false;
   console.log("json", testNetworkData);
+  console.log("json", testNetworkData.elements.edges);
+  console.log("json", testNetworkData.elements.nodes);
   // }, []);
+  const layout = { name: 'cose-bilkent' };
 
   const elements = [
     { data: { id: "one", label: "Node 1" }, position: { x: 0, y: 0 } },
@@ -76,29 +87,14 @@ function Reto3() {
                       cy={(cy) => {
                         cy = cy.center();
                       }}
-                      zoomingEnabled={false}
-                      // elements={elements}
+                      // zoomingEnabled={false}
+                      // elements={testData}
+                      // elements={testNetworkDataCy.elements}
                       elements={CytoscapeComponent.normalizeElements({
-                        nodes: [
-                          {
-                            data: { id: "one", label: "Node 1" },
-                            position: { x: 0, y: 0 },
-                          },
-                          {
-                            data: { id: "two", label: "Node 2" },
-                            position: { x: 100, y: 0 },
-                          },
-                        ],
-                        edges: [
-                          {
-                            data: {
-                              source: "one",
-                              target: "two",
-                              label: "Edge from Node1 to Node2",
-                            },
-                          },
-                        ],
+                        nodes: testNetworkData.elements.nodes,
+                        edges: testNetworkData.elements.edges
                       })}
+                      layout={layout}
                       style={{ width: "100%", height: "1000px" }}
                     />
                   ) : null}
