@@ -1,12 +1,29 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Plot from "react-plotly.js";
 import ReactDOM from "react-dom";
 import CytoscapeComponent from "react-cytoscapejs";
+import testNetworkData from '../data/VINC_PEF_2021.json'
 
 // reactstrap components
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
 function Reto3() {
+  const [networkData, setNetwork] = useState({});
+
+  // useEffect(() => {
+  //   let mounted = true;
+  //   // let testNetworkData = require("../data/test.json");
+  //   setNetwork(testNetworkData);
+  //   // fetch()
+  //   //   .then(items => {
+  //   //     if(mounted) {
+  //   //       setList(items)
+  //   //     }
+  //   //   })
+  //   // return () => mounted = false;
+    console.log("json", testNetworkData);
+  // }, []);
+
   const elements = [
     { data: { id: "one", label: "Node 1" }, position: { x: 0, y: 0 } },
     { data: { id: "two", label: "Node 2" }, position: { x: 100, y: 0 } },
@@ -36,32 +53,34 @@ function Reto3() {
                   </a>
                 </p>
                 <div style={{ backgroundColor: "#fff", margin: 40 }}>
-                <Plot
-                  style={{ width: "100%" }}
-                  data={[
-                    {
-                      x: [1, 2, 3],
-                      y: [2, 6, 3],
-                      type: "scatter",
-                      mode: "lines+markers",
-                      marker: { color: "red" },
-                    },
-                    { type: "bar", x: [1, 2, 3], y: [2, 5, 3] },
-                  ]}
-                  layout={{
-                    title: "A Fancy Plot",
-                  }}
-                />
+                  <Plot
+                    style={{ width: "100%" }}
+                    data={[
+                      {
+                        x: [1, 2, 3],
+                        y: [2, 6, 3],
+                        type: "scatter",
+                        mode: "lines+markers",
+                        marker: { color: "red" },
+                      },
+                      { type: "bar", x: [1, 2, 3], y: [2, 5, 3] },
+                    ]}
+                    layout={{
+                      title: "A Fancy Plot",
+                    }}
+                  />
                 </div>
                 <div style={{ backgroundColor: "#fff", margin: 40 }}>
-                  <CytoscapeComponent
-                    cy={(cy) => {
-                      cy = cy.center();
-                    }}
-                    zoomingEnabled={false}
-                    elements={elements}
-                    style={{ width: "100%", height: "1000px" }}
-                  />
+                  {testNetworkData != null ? (
+                    <CytoscapeComponent
+                      cy={(cy) => {
+                        cy = cy.center();
+                      }}
+                      zoomingEnabled={false}
+                      elements={elements}
+                      style={{ width: "100%", height: "1000px" }}
+                    />
+                  ) : null}
                 </div>
               </CardBody>
             </Card>

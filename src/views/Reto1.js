@@ -91,7 +91,7 @@ function Reto1() {
                   src={require("assets/img/graph3.png").default}
                 />
                 <hr />
-                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158660692545804&width=500&show_text=true&appId=1485452328231316&height=666" width={500} height={666} style={{border: 'none', overflow: 'hidden'}} scrolling="no" frameBorder={0} allowFullScreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" style={{backgroundColor: "#fff"}} />
+                <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158660692545804&width=500&show_text=true&appId=1485452328231316&height=666" width={500} height={666} style={{border: 'none', overflow: 'hidden'}} scrolling="no" frameBorder={0} allowFullScreen={true} allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" style={{backgroundColor: "#fff"}} />
 
               </CardBody>
             </Card>
