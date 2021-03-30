@@ -83,7 +83,7 @@ function Admin(props) {
         return routes[i].name;
       }
     }
-    return "Brand";
+    return "yuyuytuyuy";
   };
   return (
     <BackgroundColorContext.Consumer>
