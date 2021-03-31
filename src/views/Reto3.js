@@ -15,10 +15,16 @@ import edgehandles from "cytoscape-edgehandles";
 
 Cytoscape.use(edgehandles);
 
+function importAll(r) {
+  let images = {};
+  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  return images;
+}
+
 function Reto3() {
   const layout = { name: "preset", avoidOverlap: true, directed: true, padding: 10};
   const [networkData, setNetwork] = useState({});
-
+  const images = importAll(require.context('../data/ODS_images', false, /\.(png|jpe?g|svg)$/));
   const [value, setValue] = React.useState("R2-D2");
   const [loading, setLoading] = React.useState(true);
   const [items, setItems] = React.useState([
