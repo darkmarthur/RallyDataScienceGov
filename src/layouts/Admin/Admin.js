@@ -83,7 +83,7 @@ function Admin(props) {
         return routes[i].name;
       }
     }
-    return "yuyuytuyuy";
+    return "Rally de Datos";
   };
   return (
     <BackgroundColorContext.Consumer>
