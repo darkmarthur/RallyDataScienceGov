@@ -16,7 +16,7 @@ import edgehandles from "cytoscape-edgehandles";
 Cytoscape.use(edgehandles);
 
 function Reto3() {
-  const layout = { name: "preset", avoidOverlap: true };
+  const layout = { name: "preset", avoidOverlap: true, directed: true, padding: 10};
   const [networkData, setNetwork] = useState({});
 
   const [value, setValue] = React.useState("R2-D2");
@@ -43,7 +43,7 @@ function Reto3() {
             <Card>
               <CardHeader className="mb-5">
                 {/* <h5 className="card-category">Black Table Heading</h5> */}
-                <CardTitle tag="h3">En Progreso</CardTitle>
+                <CardTitle tag="h2">En Construcción</CardTitle>
               </CardHeader>
               <CardBody>
                 <h1>Convocatoria</h1>
