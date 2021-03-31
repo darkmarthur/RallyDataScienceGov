@@ -4,8 +4,9 @@
   "target_cytoscapejs_version" : "~2.1",
   "title" : "ODS",
   "style" : [ {
-    "selector" : "node",
+    "selector" : "node[ ODS = 1 ]",
     "css" : {
+      "background-fit": "cover",
       "border-width" : 2.0,
       "border-color" : "rgb(204,204,204)",
       "color" : "rgb(102,102,102)",
@@ -24,13 +25,12 @@
       "shape" : "ellipse"
     }
   },{
-    "selector" : "node[ ODS = 1 ]",
+    "selector" : "node[ ODS = 0 ]",
     "css" : {
       "content": "data(label)",
       "font-size": "12px",
       "text-valign": "center",
       "text-halign": "center",
-      "background-fit": "cover",
       "border-width" : 2.0,
       "border-color" : "rgb(204,204,204)",
       "color" : "rgb(102,102,102)",
@@ -72,62 +72,56 @@
       "font-size" : 10
     }
   }, {
-    "selector" : "node[ label = '17' ]",
+    "selector" : "node[ name = '1' ]",
     "css" : { "background-image": "https://live.staticflickr.com/7272/7633179468_3e19e45a0c_b.jpg"}
   }, {
-    "selector" : "edge[ id = '2564' ]",
-    "css" : { }
+    "selector" : "node[ name = '2' ]",
+    "css" : { "background-image":  "ODS_images/2.jpg"}
   }, {
-    "selector" : "edge[ id = '2533' ]",
-    "css" : { }
+    "selector" : "node[ name = '3' ]",
+    "css" : { "background-image":  "ODS_images/3.jpg"}
   }, {
-    "selector" : "edge[ id = '2534' ]",
-    "css" : { }
+    "selector" : "node[ name = '4' ]",
+    "css" : { "background-image":  "ODS_images/4.jpg" }
   }, {
-    "selector" : "edge[ id = '2598' ]",
-    "css" : { }
+    "selector" : "node[ name = '5' ]",
+    "css" : { "background-image":  "ODS_images/5.jpg" }
   }, {
-    "selector" : "edge[ id = '2441' ]",
-    "css" : { }
+    "selector" : "node[ name = '6' ]",
+    "css" : { "background-image":  "ODS_images/6.jpg" }
   }, {
-    "selector" : "edge[ id = '2445' ]",
-    "css" : { }
+    "selector" : "node[ name = '7' ]",
+    "css" : { "background-image":  "ODS_images/7.jpg" }
   }, {
-    "selector" : "edge[ id = '2578' ]",
-    "css" : { }
+    "selector" : "node[ name = '8' ]",
+    "css" : { "background-image":  "ODS_images/8.jpg" }
   }, {
-    "selector" : "edge[ id = '2547' ]",
-    "css" : { }
+    "selector" : "node[ name = '9' ]",
+    "css" : { "background-image":  "ODS_images/9.jpg" }
   }, {
-    "selector" : "edge[ id = '2516' ]",
-    "css" : { }
+    "selector" : "node[ name = '10' ]",
+    "css" : { "background-image":  "ODS_images/10.jpg" }
   }, {
-    "selector" : "edge[ id = '2580' ]",
-    "css" : { }
+    "selector" : "node[ name = '11' ]",
+    "css" : { "background-image":  "ODS_images/11.jpg" }
   }, {
-    "selector" : "edge[ id = '2517' ]",
-    "css" : { }
+    "selector" : "node[ name = '12' ]",
+    "css" : { "background-image":  "ODS_images/12.jpg" }
   }, {
-    "selector" : "edge[ id = '2456' ]",
-    "css" : { }
+    "selector" : "node[ name = '13' ]",
+    "css" : { "background-image":  "ODS_images/13.jpg" }
   }, {
-    "selector" : "edge[ id = '2488' ]",
-    "css" : { }
+    "selector" : "node[ name = '14' ]",
+    "css" : { "background-image":  "ODS_images/14.jpg" }
   }, {
-    "selector" : "edge[ id = '2489' ]",
-    "css" : { }
+    "selector" : "node[ name = '15' ]",
+    "css" : { "background-image":  "ODS_images/15.jpg" }
   }, {
-    "selector" : "edge[ id = '2553' ]",
-    "css" : { }
+    "selector" : "node[ name = '16' ]",
+    "css" : { "background-image":  "ODS_images/16.jpg" }
   }, {
-    "selector" : "edge[ id = '2617' ]",
-    "css" : { }
-  }, {
-    "selector" : "edge[ id = '2586' ]",
-    "css" : { }
-  }, {
-    "selector" : "edge[ id = '2526' ]",
-    "css" : { }
+    "selector" : "node[ name = '17' ]",
+    "css" : { "background-image":  "ODS_images/17.jpg" }
   }, {
     "selector" : "edge:selected",
     "css" : {
