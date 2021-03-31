@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
-import testNetworkData from "../data/2021?Dcontribution_inPEF.json";//"../data/VINC_PEF_2021.json";
+import testNetworkData from "../data/2021_Dcontribution_inPEF.json";//"../data/VINC_PEF_2021.json";
 import graphStyle from "../data/ODS_style.json";
 
 import Plot from "react-plotly.js";
