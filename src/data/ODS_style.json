@@ -75,6 +75,7 @@
     "selector" : "node[ name = '1' ]",
     "css" : { 
       "shape": "roundrectangle",
+      "color" : "data(color)",
       "background-fit": "cover",
       "background-image": "../data/ODS_images/1.jpg"
     }
@@ -82,18 +83,21 @@
     "selector" : "node[ name = '2' ]",
     "css" : {       
       "shape": "roundrectangle",
+      "color" : "data(color)",
       "background-fit": "cover",
       "background-image":  "../data/ODS_images/2.jpg"}
   }, {
     "selector" : "node[ name = '3' ]",
     "css" : {       
       "shape": "roundrectangle",
+      "color" : "data(color)",
       "background-fit": "cover",
       "background-image":  "../data/ODS_images/3.jpg"}
   }, {
     "selector" : "node[ name = '4' ]",
     "css" : {       
       "shape": "roundrectangle",
+      "color" : "data(color)",
       "background-fit": "cover",
       "background-image":  "../data/ODS_images/4.jpg" }
   }, {
