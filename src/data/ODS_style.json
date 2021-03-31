@@ -23,6 +23,31 @@
       "height" : 10.0,
       "shape" : "ellipse"
     }
+  },{
+    "selector" : "node[ ODS = 1 ]",
+    "css" : {
+      "content": "data(label)",
+      "font-size": "12px",
+      "text-valign": "center",
+      "text-halign": "center",
+      "background-fit": "cover",
+      "border-width" : 2.0,
+      "border-color" : "rgb(204,204,204)",
+      "color" : "rgb(102,102,102)",
+      "text-valign" : "bottom",
+      "text-halign" : "right",
+      "width" : 10.0,
+      "background-opacity" : 1.0,
+      "font-family" : "SansSerif.plain",
+      "font-weight" : "normal",
+      "font-size" : 10,
+      "background-color" : "rgb(254,196,79)",
+      "text-opacity" : 1.0,
+      "border-opacity" : 1.0,
+      "content" : "",
+      "height" : 10.0,
+      "shape" : "ellipse"
+     }
   }, {
     "selector" : "node:selected",
     "css" : {
