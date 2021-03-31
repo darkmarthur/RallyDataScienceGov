@@ -28,25 +28,14 @@
     "selector" : "node[ ODS = 0 ]",
     "css" : {
       "content": "data(name)",
-      "font-size": "12px",
       "text-valign": "center",
       "text-halign": "center",
-      "border-width" : 2.0,
-      "border-color" : "rgb(204,204,204)",
-      "color" : "rgb(102,102,102)",
-      "text-valign" : "bottom",
-      "text-halign" : "right",
-      "width" : 10.0,
-      "background-opacity" : 1.0,
-      "font-family" : "SansSerif.plain",
-      "font-weight" : "normal",
-      "font-size" : 10,
-      "background-color" : "rgb(254,196,79)",
-      "text-opacity" : 1.0,
-      "border-opacity" : 1.0,
-      "content" : "",
-      "height" : 10.0,
-      "shape" : "ellipse"
+      "color": "black",
+      "font-size" : 5,
+      "text-outline-width": 0.5,
+      "text-outline-color": "#eee",
+      "text-wrap": "wrap",
+      "text-max-width": 80
      }
   }, {
     "selector" : "node:selected",
