@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/RallyDataScienceGov/static/css/main.898a46a0.chunk.css",
-    "main.js": "/RallyDataScienceGov/static/js/main.979433a1.chunk.js",
-    "main.js.map": "/RallyDataScienceGov/static/js/main.979433a1.chunk.js.map",
+    "main.js": "/RallyDataScienceGov/static/js/main.e01a4643.chunk.js",
+    "main.js.map": "/RallyDataScienceGov/static/js/main.e01a4643.chunk.js.map",
     "runtime-main.js": "/RallyDataScienceGov/static/js/runtime-main.5505cafa.js",
     "runtime-main.js.map": "/RallyDataScienceGov/static/js/runtime-main.5505cafa.js.map",
     "static/css/2.53ae5aa7.chunk.css": "/RallyDataScienceGov/static/css/2.53ae5aa7.chunk.css",
@@ -20,10 +20,10 @@
     "static/media/2-2.jpg": "/RallyDataScienceGov/static/media/2-2.32ad6fd8.jpg",
     "static/media/2-3.jpg": "/RallyDataScienceGov/static/media/2-3.316e0f1c.jpg",
     "static/media/2-4.jpg": "/RallyDataScienceGov/static/media/2-4.5a4b97fd.jpg",
-    "static/media/3-1.jpg": "/RallyDataScienceGov/static/media/3-1.ee72f0f5.jpg",
-    "static/media/3-2.jpg": "/RallyDataScienceGov/static/media/3-2.eb7c4b9c.jpg",
-    "static/media/3-3.jpg": "/RallyDataScienceGov/static/media/3-3.045e3773.jpg",
-    "static/media/3-4.jpg": "/RallyDataScienceGov/static/media/3-4.4a85788c.jpg",
+    "static/media/3-1.png": "/RallyDataScienceGov/static/media/3-1.c6487c48.png",
+    "static/media/3-2.png": "/RallyDataScienceGov/static/media/3-2.069b054b.png",
+    "static/media/3-3.png": "/RallyDataScienceGov/static/media/3-3.721d2a7d.png",
+    "static/media/3-4.png": "/RallyDataScienceGov/static/media/3-4.80225944.png",
     "static/media/anime3.png": "/RallyDataScienceGov/static/media/anime3.4438e506.png",
     "static/media/carlos.jpg": "/RallyDataScienceGov/static/media/carlos.b072028a.jpg",
     "static/media/all.min.css": "/RallyDataScienceGov/static/media/fa-solid-900.46fdbd2d.woff",
@@ -35,13 +35,13 @@
     "static/media/mario.jpg": "/RallyDataScienceGov/static/media/mario.e9ea1bcf.jpg",
     "static/media/nicole.jpg": "/RallyDataScienceGov/static/media/nicole.7b9ddabc.jpg",
     "static/media/nucleo-icons.css": "/RallyDataScienceGov/static/media/nucleo.bd5cce8b.eot",
-    "static/media/react-logo.561f1671.png": "/RallyDataScienceGov/static/media/react-logo.561f1671.png"
+    "static/media/react-logo.46b8eced.png": "/RallyDataScienceGov/static/media/react-logo.46b8eced.png"
   },
   "entrypoints": [
     "static/js/runtime-main.5505cafa.js",
     "static/css/2.53ae5aa7.chunk.css",
     "static/js/2.8553f777.chunk.js",
     "static/css/main.898a46a0.chunk.css",
-    "static/js/main.979433a1.chunk.js"
+    "static/js/main.e01a4643.chunk.js"
   ]
 }
