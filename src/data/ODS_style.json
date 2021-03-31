@@ -27,7 +27,7 @@
   },{
     "selector" : "node[ ODS = 0 ]",
     "css" : {
-      "content": "data(label)",
+      "content": "data[ label ]",
       "font-size": "12px",
       "text-valign": "center",
       "text-halign": "center",
@@ -73,55 +73,107 @@
     }
   }, {
     "selector" : "node[ name = '1' ]",
-    "css" : { "background-image": "https://live.staticflickr.com/7272/7633179468_3e19e45a0c_b.jpg"}
+    "css" : { 
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image": "./ODS_images/1.jpg"
+    }
   }, {
     "selector" : "node[ name = '2' ]",
-    "css" : { "background-image":  "ODS_images/2.jpg"}
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/2.jpg"}
   }, {
     "selector" : "node[ name = '3' ]",
-    "css" : { "background-image":  "ODS_images/3.jpg"}
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/3.jpg"}
   }, {
     "selector" : "node[ name = '4' ]",
-    "css" : { "background-image":  "ODS_images/4.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/4.jpg" }
   }, {
     "selector" : "node[ name = '5' ]",
-    "css" : { "background-image":  "ODS_images/5.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/5.jpg" }
   }, {
     "selector" : "node[ name = '6' ]",
-    "css" : { "background-image":  "ODS_images/6.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/6.jpg" }
   }, {
     "selector" : "node[ name = '7' ]",
-    "css" : { "background-image":  "ODS_images/7.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/7.jpg" }
   }, {
     "selector" : "node[ name = '8' ]",
-    "css" : { "background-image":  "ODS_images/8.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/8.jpg" }
   }, {
     "selector" : "node[ name = '9' ]",
-    "css" : { "background-image":  "ODS_images/9.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/9.jpg" }
   }, {
     "selector" : "node[ name = '10' ]",
-    "css" : { "background-image":  "ODS_images/10.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/10.jpg" }
   }, {
     "selector" : "node[ name = '11' ]",
-    "css" : { "background-image":  "ODS_images/11.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/11.jpg" }
   }, {
     "selector" : "node[ name = '12' ]",
-    "css" : { "background-image":  "ODS_images/12.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/12.jpg" }
   }, {
     "selector" : "node[ name = '13' ]",
-    "css" : { "background-image":  "ODS_images/13.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/13.jpg" }
   }, {
     "selector" : "node[ name = '14' ]",
-    "css" : { "background-image":  "ODS_images/14.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/14.jpg" }
   }, {
     "selector" : "node[ name = '15' ]",
-    "css" : { "background-image":  "ODS_images/15.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/15.jpg" }
   }, {
     "selector" : "node[ name = '16' ]",
-    "css" : { "background-image":  "ODS_images/16.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/16.jpg" }
   }, {
     "selector" : "node[ name = '17' ]",
-    "css" : { "background-image":  "ODS_images/17.jpg" }
+    "css" : {       
+      "shape": "roundrectangle",
+      "background-fit": "cover",
+      "background-image":  "./ODS_images/17.jpg" }
   }, {
     "selector" : "edge:selected",
     "css" : {
