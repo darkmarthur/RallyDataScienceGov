@@ -92,7 +92,7 @@
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-05.png"
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-05.png"}
   }, {
     "selector" : "node[ name = '6' ]",
     "css" : {       
