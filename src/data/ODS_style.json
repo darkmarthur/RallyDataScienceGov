@@ -55,8 +55,6 @@
       "target-arrow-color" : "rgb(204,204,204)",
       "line-style" : "solid",
       "opacity" : 1.0,
-      "font-family" : "SansSerif.plain",
-      "font-weight" : "normal",
       "content" : "",
       "font-size" : 10
     }
@@ -66,7 +64,7 @@
       "shape": "roundrectangle",
       "color" : "data(color)",
       "background-fit": "cover",
-      "background-image": "images['1.jpg']"
+      "background-image": "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-01.png"
     }
   }, {
     "selector" : "node[ name = '2' ]",
@@ -74,99 +72,99 @@
       "shape": "roundrectangle",
       "color" : "data(color)",
       "background-fit": "cover",
-      "background-image":  "<img src={images['2.jpg']} />"}
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-02.png"}
   }, {
     "selector" : "node[ name = '3' ]",
     "css" : {       
       "shape": "roundrectangle",
       "color" : "data(color)",
       "background-fit": "cover",
-      "background-image":  "images['3.jpg']"}
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-03.png"}
   }, {
     "selector" : "node[ name = '4' ]",
     "css" : {       
       "shape": "roundrectangle",
       "color" : "data(color)",
       "background-fit": "cover",
-      "background-image":  "ODS_1" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-04.png" }
   }, {
     "selector" : "node[ name = '5' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/5.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-05.png"
   }, {
     "selector" : "node[ name = '6' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/6.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-06.png" }
   }, {
     "selector" : "node[ name = '7' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/7.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-07.png" }
   }, {
     "selector" : "node[ name = '8' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/8.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-08.png" }
   }, {
     "selector" : "node[ name = '9' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/9.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-09.png" }
   }, {
     "selector" : "node[ name = '10' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/10.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-10.png" }
   }, {
     "selector" : "node[ name = '11' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/11.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-11.png" }
   }, {
     "selector" : "node[ name = '12' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/12.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-12.png" }
   }, {
     "selector" : "node[ name = '13' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/13.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-13.png" }
   }, {
     "selector" : "node[ name = '14' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/14.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-14.png" }
   }, {
     "selector" : "node[ name = '15' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/15.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-15.png" }
   }, {
     "selector" : "node[ name = '16' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/16.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-16.png" }
   }, {
     "selector" : "node[ name = '17' ]",
     "css" : {       
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image":  "../data/ODS_images/17.jpg" }
+      "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-17.png" }
   }, {
     "selector" : "edge:selected",
     "css" : {
