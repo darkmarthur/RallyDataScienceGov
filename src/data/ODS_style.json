@@ -40,7 +40,7 @@
     "css" : { 
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image": "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-01.png"
+      "background-image": "https://live.staticflickr.com/2660/3715569167_7e978e8319_b.jpg"
     }
   }, {
     "selector" : "node:selected",
