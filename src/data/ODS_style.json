@@ -9,7 +9,7 @@
       "background-fit": "cover",
       "border-width" : 2.0,
       "border-color" : "rgb(204,204,204)",
-      "color" : "rgb(102,102,102)",
+      "color" : "data(color)",
       "text-valign" : "bottom",
       "text-halign" : "right",
       "width" : 10.0,
@@ -27,7 +27,7 @@
   },{
     "selector" : "node[ ODS = 0 ]",
     "css" : {
-      "content": "data[ name ]",
+      "content": "data(name)",
       "font-size": "12px",
       "text-valign": "center",
       "text-halign": "center",
