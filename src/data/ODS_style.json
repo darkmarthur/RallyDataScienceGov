@@ -4,12 +4,10 @@
   "target_cytoscapejs_version" : "~2.1",
   "title" : "ODS",
   "style" : [ {
-    "selector" : "node[ ODS = 1 ]",
+    "selector" : "node",
     "css" : {
-      "background-fit": "cover",
-      "border-width" : 2.0,
+      "border-width" : 1.0,
       "border-color" : "rgb(204,204,204)",
-      "color" : "data(color)",
       "text-valign" : "bottom",
       "text-halign" : "right",
       "width" : 10.0,
@@ -37,27 +35,6 @@
       "text-wrap": "wrap",
       "text-max-width": 80
      }
-  }, {
-    "selector" : "node:selected",
-    "css" : {
-      "background-color" : "rgb(255,255,0)"
-    }
-  }, {
-    "selector" : "edge",
-    "css" : {
-      "source-arrow-shape" : "none",
-      "width" : 0.5,
-      "color" : "rgb(0,0,0)",
-      "source-arrow-color" : "rgb(204,204,204)",
-      "target-arrow-shape" : "triangle",
-      "line-color" : "rgb(204,204,204)",
-      "text-opacity" : 1.0,
-      "target-arrow-color" : "rgb(204,204,204)",
-      "line-style" : "solid",
-      "opacity" : 1.0,
-      "content" : "",
-      "font-size" : 10
-    }
   }, {
     "selector" : "node[ name = '1' ]",
     "css" : { 
@@ -165,7 +142,28 @@
       "shape": "roundrectangle",
       "background-fit": "cover",
       "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-17.png" }
+  },, {
+    "selector" : "node:selected",
+    "css" : {
+      "background-color" : "rgb(255,255,0)"
+    }
   }, {
+    "selector" : "edge",
+    "css" : {
+      "source-arrow-shape" : "none",
+      "width" : 0.5,
+      "color" : "rgb(0,0,0)",
+      "source-arrow-color" : "rgb(204,204,204)",
+      "target-arrow-shape" : "triangle",
+      "line-color" : "rgb(204,204,204)",
+      "text-opacity" : 1.0,
+      "target-arrow-color" : "rgb(204,204,204)",
+      "line-style" : "solid",
+      "opacity" : 1.0,
+      "content" : "",
+      "font-size" : 10
+    }
+  } {
     "selector" : "edge:selected",
     "css" : {
       "line-color" : "rgb(255,0,0)"
