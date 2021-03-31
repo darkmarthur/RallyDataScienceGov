@@ -197,28 +197,28 @@ function Reto2() {
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/3-1.jpg").default}
+                      src={require("assets/img/posts/3-1.png").default}
                     />
                   </div>
                   <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/3-2.jpg").default}
+                      src={require("assets/img/posts/3-2.png").default}
                     />
                   </div>
                   <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/3-3.jpg").default}
+                      src={require("assets/img/posts/3-3.png").default}
                     />
                   </div>
                   <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/3-4.jpg").default}
+                      src={require("assets/img/posts/3-4.png").default}
                     />
                   </div>
                 </div>
