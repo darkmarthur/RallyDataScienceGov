@@ -142,7 +142,7 @@
       "shape": "roundrectangle",
       "background-fit": "cover",
       "background-image":  "https://es.unesco.org/creativity/sites/creativity/files/s_sdg_individual_rgb-17.png" }
-  },, {
+  }, {
     "selector" : "node:selected",
     "css" : {
       "background-color" : "rgb(255,255,0)"
@@ -163,7 +163,7 @@
       "content" : "",
       "font-size" : 10
     }
-  } {
+  }, {
     "selector" : "edge:selected",
     "css" : {
       "line-color" : "rgb(255,0,0)"
