@@ -5,6 +5,8 @@ import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 import testNetworkData from "../data/2021_Dcontribution_inPEF.json";//"../data/VINC_PEF_2021.json";
 import graphStyle from "../data/ODS_style.json";
 
+import ODS_1 from '../data/ODS_images/1.jpg'
+
 import Plot from "react-plotly.js";
 import Cytoscape from "cytoscape";
 // import BubbleSets from 'cytoscape-bubblesets';
@@ -17,14 +19,14 @@ Cytoscape.use(edgehandles);
 
 function importAll(r) {
   let images = {};
-  r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+  r.keys().map((item, index) => { images[item.replace("./", "")] = r(item); });
   return images;
 }
 
 function Reto3() {
   const layout = { name: "preset", avoidOverlap: true, directed: true, padding: 10};
   const [networkData, setNetwork] = useState({});
-  const images = importAll(require.context('../data/ODS_images', false, /\.(png|jpe?g|svg)$/));
+  const images = importAll(require.context("../data/ODS_images", false, /\.(png|jpe?g|svg)$/));
   const [value, setValue] = React.useState("R2-D2");
   const [loading, setLoading] = React.useState(true);
   const [items, setItems] = React.useState([
@@ -49,16 +51,17 @@ function Reto3() {
             <Card>
               <CardHeader className="mb-5">
                 {/* <h5 className="card-category">Black Table Heading</h5> */}
-                <CardTitle tag="h2">En Construcción</CardTitle>
+                <CardTitle tag="h2"></CardTitle>
               </CardHeader>
               <CardBody>
-                <h1>Convocatoria</h1>
+                <h1>En Construcción...</h1>
                 <p>
                   Este sitio ha sido creado para proveer los datos recopilados y
                   calculados por el equipo <b>DataOpossum</b> para el{" "}
                   <a href="https://www.transparenciapresupuestaria.gob.mx/es/PTP/Convocatoria_rally_2021">
                     Rally de Datos: Explorando Datos para el Desarrollo
                     Sostenible
+
                   </a>
                 </p>
                 <div style={{ backgroundColor: "#fff", margin: 40 }}>
