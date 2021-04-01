@@ -40,8 +40,7 @@
     "css" : { 
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image": "./ODS_images/1.jpg"
-      
+      "background-image": "https://image.shutterstock.com/image-photo/waves-water-river-sea-meet-600w-1529923664.jpg"
     }
   }, {
     "selector" : "node:selected",
