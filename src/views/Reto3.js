@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import ReactDOM from "react-dom";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
-import testNetworkData from "../data/2021_Dcontribution_inPEF.json";//"../data/VINC_PEF_2021.json";
+import testNetworkData from "../data/2021_Dcontribution_inPEF.json"; //"../data/VINC_PEF_2021.json";
 import graphStyle from "../data/ODS_style.json";
 
 // import ODS_1 from '../data/ODS_images/1.jpg'
@@ -19,29 +19,56 @@ Cytoscape.use(edgehandles);
 
 function importAll(r) {
   let images = {};
-  r.keys().map((item, index) => { images[item.replace("./", "")] = r(item); });
+  r.keys().map((item, index) => {
+    images[item.replace("./", "")] = r(item);
+  });
   return images;
 }
 
 function Reto3() {
-  const images = importAll(require.context("../data/ODS_images", false, /\.(png|jpe?g|svg)$/));
-  const layout = { name: "preset", avoidOverlap: true, directed: true, padding: 10};
+  const images = importAll(
+    require.context("../data/ODS_images", false, /\.(png|jpe?g|svg)$/)
+  );
+  const layout = {
+    name: "preset",
+    avoidOverlap: true,
+    directed: true,
+    padding: 10,
+  };
   const [networkData, setNetwork] = useState({});
-  const [value, setValue] = React.useState("R2-D2");
-  const [loading, setLoading] = React.useState(true);
-  const [items, setItems] = React.useState([
-    { label: "Loading ...", value: "" },
+  const [value, setValue] = useState(1);
+  const [loading, setLoading] = useState(true);
+  const [items, setItems] = useState([
+    { label: "ODS 1", value: 1 },
+    { label: "ODS 2", value: 2 },
+    { label: "ODS 3", value: 3 },
+    { label: "ODS 4", value: 4 },
+    { label: "ODS 5", value: 5 },
+    { label: "ODS 6", value: 6 },
+    { label: "ODS 7", value: 7 },
+    { label: "ODS 8", value: 8 },
+    { label: "ODS 9", value: 9 },
+    { label: "ODS 10", value: 10 },
+    { label: "ODS 11", value: 11 },
+    { label: "ODS 12", value: 12 },
+    { label: "ODS 13", value: 13 },
+    { label: "ODS 14", value: 14 },
+    { label: "ODS 15", value: 15 },
+    { label: "ODS 16", value: 16 },
+    { label: "ODS 17", value: 17 },
   ]);
 
   useEffect(() => {
     async function filterODS() {
+      console.log(value);
       // const response = await fetch("https://jsonplaceholder.typicode.com/users");
       // const body = await response.json();
       // setItems(body.results.map(({ name }) => ({ label: name, value: name })));
       setLoading(false);
     }
     filterODS();
-  }, []);
+    console.log(value);
+  }, [value]);
 
   return (
     <>
@@ -61,7 +88,6 @@ function Reto3() {
                   <a href="https://www.transparenciapresupuestaria.gob.mx/es/PTP/Convocatoria_rally_2021">
                     Rally de Datos: Explorando Datos para el Desarrollo
                     Sostenible
-
                   </a>
                 </p>
                 {/* <div style={{ backgroundColor: "#fff", margin: 40 }}>
@@ -83,9 +109,14 @@ function Reto3() {
                   />
                 </div> */}
                 <select disabled={loading}>
-                  {items.map((item) => (
-                    <option key={item.value} value={item.value}>
-                      {item.label}
+                  {items.map(({ label, value }) => (
+                    <option
+                      key={value}
+                      value={value}
+                      onChange={(e) => console.log('here')}
+                      // onChange={(e) => setValue(e.currentTarget.value)}
+                    >
+                      {label}
                     </option>
                   ))}
                 </select>

@@ -25,6 +25,38 @@
       }
     },
     {
+      "selector": "node:selected",
+      "css": {
+        "background-color": "rgb(255,255,0)",
+        "line-color": "rgb(255,0,0)",
+        "text-opacity": 1.0,
+        "target-arrow-color": "rgb(255,0,0)"
+      }
+    },
+    {
+      "selector": "edge",
+      "css": {
+        "source-arrow-shape": "none",
+        "width": 0.5,
+        "color": "rgb(0,0,0)",
+        "source-arrow-color": "rgb(204,204,204)",
+        "target-arrow-shape": "triangle",
+        "line-color": "rgb(204,204,204)",
+        "text-opacity": 1.0,
+        "target-arrow-color": "rgb(204,204,204)",
+        "line-style": "solid",
+        "opacity": 1.0,
+        "content": "",
+        "font-size": 10
+      }
+    },
+    {
+      "selector": "edge:selected",
+      "css": {
+        "line-color": "rgb(255,0,0)"
+      }
+    },
+    {
       "selector": "node[ ODS = 0 ]",
       "css": {
         "content": "data(name)",
@@ -206,35 +238,6 @@
         "shape": "roundrectangle",
         "background-fit": "cover",
         "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/17.jpg"
-      }
-    },
-    {
-      "selector": "node:selected",
-      "css": {
-        "background-color": "rgb(255,255,0)"
-      }
-    },
-    {
-      "selector": "edge",
-      "css": {
-        "source-arrow-shape": "none",
-        "width": 0.5,
-        "color": "rgb(0,0,0)",
-        "source-arrow-color": "rgb(204,204,204)",
-        "target-arrow-shape": "triangle",
-        "line-color": "rgb(204,204,204)",
-        "text-opacity": 1.0,
-        "target-arrow-color": "rgb(204,204,204)",
-        "line-style": "solid",
-        "opacity": 1.0,
-        "content": "",
-        "font-size": 10
-      }
-    },
-    {
-      "selector": "edge:selected",
-      "css": {
-        "line-color": "rgb(255,0,0)"
       }
     }
   ]
