@@ -2,15 +2,10 @@ import React from "react";
 
 // reactstrap components
 import {
-  Button,
   Card,
-  CardHeader,
   CardBody,
   CardFooter,
   CardText,
-  FormGroup,
-  Form,
-  Input,
   Row,
   Col,
 } from "reactstrap";
@@ -50,6 +45,7 @@ function Equipo() {
                     color="google"
                     href="https://www.linkedin.com/in/carlos-roberto-cruz-maldonado-a9662173/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <i className="fab fa-linkedin fa-2x" />
                   </a>
@@ -88,6 +84,7 @@ function Equipo() {
                     color="google"
                     href="https://www.linkedin.com/in/camila-nicole-torres-franco-879717b5/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <i className="fab fa-linkedin fa-2x" />
                   </a>
@@ -126,6 +123,7 @@ function Equipo() {
                     color="google"
                     href="https://www.linkedin.com/in/mariodquiroz/"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     <i className="fab fa-linkedin fa-2x" />
                   </a>

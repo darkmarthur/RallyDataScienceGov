@@ -1,10 +1,10 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
-import { BrowserRouter, HashRouter, Route, Switch, Redirect } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 
 import AdminLayout from "layouts/Admin/Admin.js";
-import RTLLayout from "layouts/RTL/RTL.js";
+// import RTLLayout from "layouts/RTL/RTL.js";
 
 import "assets/scss/black-dashboard-react.scss";
 import "assets/demo/demo.css";

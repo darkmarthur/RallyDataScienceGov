@@ -21,30 +21,30 @@ function Inicio() {
                 <p>
                   Este sitio ha sido creado para proveer los datos recopilados y
                   calculados por el equipo <b>DataOpossum</b> para el{" "}
-                  <a href="https://www.transparenciapresupuestaria.gob.mx/es/PTP/Convocatoria_rally_2021">
+                  <a href="https://www.transparenciapresupuestaria.gob.mx/es/PTP/Convocatoria_rally_2021" target="_blank" rel="noreferrer">
                     Rally de Datos: Explorando Datos para el Desarrollo
                     Sostenible
                   </a>
                 </p>
                 <p>
                   Con el objetivo de promover el uso de los datos abiertos,
-                  <a href="https://www.gob.mx/hacienda" target="_blank">
+                  <a href="https://www.gob.mx/hacienda" target="_blank" rel="noreferrer">
                     {" "}
                     La Secretaría de Hacienda y Crédito Público{" "}
                   </a>
                   con su portal de
-                  <a href="https://www.transparenciapresupuestaria.gob.mx/">
+                  <a href="https://www.transparenciapresupuestaria.gob.mx/" target="_blank" rel="noreferrer">
                     {" "}
                     Transparencia Presupuestaria{" "}
                   </a>
                   y el
-                  <a href="https://ciep.mx/" target="_blank">
+                  <a href="https://ciep.mx/" target="_blank" rel="noreferrer">
                     {" "}
                     Centro de Investigación Económica y Presupuestaria, A.C.{" "}
                   </a>
                   , convocaron a la sexta edición del Rally de Datos: Explorando
                   datos para el Desarrollo Sostenible, en el marco del{" "}
-                  <a href="https://opendataday.org/es_es/">
+                  <a href="https://opendataday.org/es_es/" target="_blank" rel="noreferrer">
                     Día de los Datos Abiertos
                   </a>
                 </p>

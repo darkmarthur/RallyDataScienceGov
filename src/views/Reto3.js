@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import ReactDOM from "react-dom";
+// import ReactDOM from "react-dom";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
 import testNetworkData from "../data/2021_Dcontribution_inPEF.json";//"../data/VINC_PEF_2021.json";
 import graphStyle from "../data/ODS_style.json";
 
-import ODS_1 from '../data/ODS_images/1.jpg'
+// import ODS_1 from '../data/ODS_images/1.jpg'
 
-import Plot from "react-plotly.js";
+// import Plot from "react-plotly.js";
 import Cytoscape from "cytoscape";
 // import BubbleSets from 'cytoscape-bubblesets';
 // import COSEBilkent from "cytoscape-cose-bilkent";
@@ -24,24 +24,24 @@ function importAll(r) {
 }
 
 function Reto3() {
+  const images = importAll(require.context("../data/ODS_images", false, /\.(png|jpe?g|svg)$/));
   const layout = { name: "preset", avoidOverlap: true, directed: true, padding: 10};
   const [networkData, setNetwork] = useState({});
-  const images = importAll(require.context("../data/ODS_images", false, /\.(png|jpe?g|svg)$/));
   const [value, setValue] = React.useState("R2-D2");
   const [loading, setLoading] = React.useState(true);
   const [items, setItems] = React.useState([
     { label: "Loading ...", value: "" },
   ]);
 
-  // useEffect(() => {
-  //   async function getCharacters() {
-  //     const response = await fetch("https://jsonplaceholder.typicode.com/users");
-  //     const body = await response.json();
-  //     setItems(body.results.map(({ name }) => ({ label: name, value: name })));
-  //     setLoading(false);
-  //   }
-  //   getCharacters();
-  // }, []);
+  useEffect(() => {
+    async function filterODS() {
+      // const response = await fetch("https://jsonplaceholder.typicode.com/users");
+      // const body = await response.json();
+      // setItems(body.results.map(({ name }) => ({ label: name, value: name })));
+      setLoading(false);
+    }
+    filterODS();
+  }, []);
 
   return (
     <>
@@ -64,7 +64,7 @@ function Reto3() {
 
                   </a>
                 </p>
-                <div style={{ backgroundColor: "#fff", margin: 40 }}>
+                {/* <div style={{ backgroundColor: "#fff", margin: 40 }}>
                   <Plot
                     style={{ width: "100%" }}
                     data={[
@@ -81,14 +81,14 @@ function Reto3() {
                       title: "A Fancy Plot",
                     }}
                   />
-                </div>
-                {/* <select disabled={loading}>
+                </div> */}
+                <select disabled={loading}>
                   {items.map((item) => (
                     <option key={item.value} value={item.value}>
                       {item.label}
                     </option>
                   ))}
-                </select> */}
+                </select>
                 {/* 15161A */}
                 <div style={{ backgroundColor: "#fff", margin: 40 }}>
                   {testNetworkData != null ? (

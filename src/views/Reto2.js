@@ -1,7 +1,7 @@
 import React from "react";
 
 // reactstrap components
-import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
+import { Card, CardBody, Row, Col } from "reactstrap";
 
 function Reto2() {
   return (
@@ -99,6 +99,7 @@ function Reto2() {
                   <a
                     href="https://www.un.org/sustainabledevelopment/es/wp-content/uploads/sites/3/2019/04/17-00011_LazyPersonGuide_flyer_Spanish_final.pdf"
                     target="_blank"
+                    rel="noreferrer"
                   >
                     La Guía de los vagos para salvar el mundo
                   </a>{" "}
@@ -225,15 +226,15 @@ function Reto2() {
                 <hr />
                 <hr />
                 <iframe
+                  title="Facebook Post"
                   src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158660692545804&width=500&show_text=true&appId=1485452328231316&height=666"
                   width={500}
                   height={666}
-                  style={{ border: "none", overflow: "hidden" }}
+                  style={{ border: "none", overflow: "hidden", backgroundColor: "#fff" }}
                   scrolling="no"
                   frameBorder={0}
                   allowFullScreen={true}
                   allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  style={{ backgroundColor: "#fff" }}
                 />
               </CardBody>
             </Card>

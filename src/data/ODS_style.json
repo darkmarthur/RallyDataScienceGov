@@ -12,7 +12,7 @@
       "text-halign" : "right",
       "width" : 10.0,
       "background-opacity" : 1.0,
-      "font-family" : "SansSerif.plain",
+      "font-family" : "SansSerif",
       "font-weight" : "normal",
       "font-size" : 10,
       "background-color" : "rgb(254,196,79)",
@@ -40,7 +40,8 @@
     "css" : { 
       "shape": "roundrectangle",
       "background-fit": "cover",
-      "background-image": "https://live.staticflickr.com/2660/3715569167_7e978e8319_b.jpg"
+      "background-image": "./ODS_images/1.jpg"
+      
     }
   }, {
     "selector" : "node:selected",

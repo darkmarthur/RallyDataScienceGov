@@ -7,10 +7,6 @@ import {
   CardHeader,
   CardBody,
   CardFooter,
-  CardText,
-  FormGroup,
-  Form,
-  Input,
   Row,
   Col,
 } from "reactstrap";
