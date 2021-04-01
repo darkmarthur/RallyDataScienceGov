@@ -1,72 +1,241 @@
 {
-  "format_version" : "1.0",
-  "generated_by" : "cytoscape-3.8.2",
-  "target_cytoscapejs_version" : "~2.1",
-  "title" : "ODS",
-  "style" : [ {
-    "selector" : "node",
-    "css" : {
-      "border-width" : 1.0,
-      "border-color" : "rgb(204,204,204)",
-      "text-valign" : "bottom",
-      "text-halign" : "right",
-      "width" : 10.0,
-      "background-opacity" : 1.0,
-      "font-family" : "SansSerif",
-      "font-weight" : "normal",
-      "font-size" : 10,
-      "background-color" : "rgb(254,196,79)",
-      "text-opacity" : 1.0,
-      "border-opacity" : 1.0,
-      "content" : "",
-      "height" : 10.0,
-      "shape" : "ellipse"
+  "format_version": "1.0",
+  "generated_by": "cytoscape-3.8.2",
+  "target_cytoscapejs_version": "~2.1",
+  "title": "ODS",
+  "style": [
+    {
+      "selector": "node",
+      "css": {
+        "border-width": 1.0,
+        "border-color": "rgb(204,204,204)",
+        "text-valign": "bottom",
+        "text-halign": "right",
+        "width": 10.0,
+        "background-opacity": 1.0,
+        "font-family": "SansSerif",
+        "font-weight": "normal",
+        "font-size": 10,
+        "background-color": "rgb(254,196,79)",
+        "text-opacity": 1.0,
+        "border-opacity": 1.0,
+        "content": "",
+        "height": 10.0,
+        "shape": "ellipse"
+      }
+    },
+    {
+      "selector": "node[ ODS = 0 ]",
+      "css": {
+        "content": "data(name)",
+        "text-valign": "center",
+        "text-halign": "center",
+        "color": "black",
+        "font-size": 5,
+        "text-outline-width": 0.5,
+        "text-outline-color": "#eee",
+        "text-wrap": "wrap",
+        "text-max-width": 80
+      }
+    },
+    {
+      "selector": "node[ name = '1' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/1.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '2' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/2.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '3' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/3.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '4' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/4.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '5' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/5.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '6' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/6.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '7' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/7.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '8' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/8.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '9' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/8.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '10' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/10.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '11' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/11.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '12' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/12.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '13' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/13.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '14' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/14.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '15' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/15.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '16' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/16.jpg"
+      }
+    },
+    {
+      "selector": "node[ name = '17' ]",
+      "css": {
+        "width": 50,
+        "height": 50,
+        "shape": "roundrectangle",
+        "background-fit": "cover",
+        "background-image": "https://raw.githubusercontent.com/darkmarthur/RallyDataScienceGov/master/github-assets/ODS_images/17.jpg"
+      }
+    },
+    {
+      "selector": "node:selected",
+      "css": {
+        "background-color": "rgb(255,255,0)"
+      }
+    },
+    {
+      "selector": "edge",
+      "css": {
+        "source-arrow-shape": "none",
+        "width": 0.5,
+        "color": "rgb(0,0,0)",
+        "source-arrow-color": "rgb(204,204,204)",
+        "target-arrow-shape": "triangle",
+        "line-color": "rgb(204,204,204)",
+        "text-opacity": 1.0,
+        "target-arrow-color": "rgb(204,204,204)",
+        "line-style": "solid",
+        "opacity": 1.0,
+        "content": "",
+        "font-size": 10
+      }
+    },
+    {
+      "selector": "edge:selected",
+      "css": {
+        "line-color": "rgb(255,0,0)"
+      }
     }
-  },{
-    "selector" : "node[ ODS = 0 ]",
-    "css" : {
-      "content": "data(name)",
-      "text-valign": "center",
-      "text-halign": "center",
-      "color": "black",
-      "font-size" : 5,
-      "text-outline-width": 0.5,
-      "text-outline-color": "#eee",
-      "text-wrap": "wrap",
-      "text-max-width": 80
-     }
-  }, {
-    "selector" : "node[ name = '1' ]",
-    "css" : { 
-      "shape": "roundrectangle",
-      "background-fit": "cover",
-      "background-image": "https://image.shutterstock.com/image-photo/waves-water-river-sea-meet-600w-1529923664.jpg"
-    }
-  }, {
-    "selector" : "node:selected",
-    "css" : {
-      "background-color" : "rgb(255,255,0)"
-    }
-  }, {
-    "selector" : "edge",
-    "css" : {
-      "source-arrow-shape" : "none",
-      "width" : 0.5,
-      "color" : "rgb(0,0,0)",
-      "source-arrow-color" : "rgb(204,204,204)",
-      "target-arrow-shape" : "triangle",
-      "line-color" : "rgb(204,204,204)",
-      "text-opacity" : 1.0,
-      "target-arrow-color" : "rgb(204,204,204)",
-      "line-style" : "solid",
-      "opacity" : 1.0,
-      "content" : "",
-      "font-size" : 10
-    }
-  }, {
-    "selector" : "edge:selected",
-    "css" : {
-      "line-color" : "rgb(255,0,0)"
-    }
-  } ]
+  ]
 }
