@@ -108,7 +108,7 @@ function Reto3() {
                     }}
                   />
                 </div> */}
-                <select disabled={loading}>
+                <div>Seleccionar ODS: </div><select disabled={loading}>
                   {items.map(({ label, value }) => (
                     <option
                       key={value}
