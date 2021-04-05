@@ -53,10 +53,27 @@ function Reto3() {
     console.log("Selected ODS", selectedODS);
     if (selectedODS !== 0) {
       let filteredNetwork = JSON.parse(JSON.stringify(networkDataFile));
-      let filteredNodes = [...filteredNetwork.elements.nodes].filter(
-        (x) => x.data["Outdegree"] === selectedODS
+      let findNodes = new Array(0);
+
+      let getNodeID = [...filteredNetwork.elements.nodes].find(
+        (x) => Number(x.data["name"]) === selectedODS
       );
+
+      let filteredEdges = [...filteredNetwork.elements.edges].filter(
+        (x) =>
+          x.data["target"] === getNodeID.data["id"] ||
+          x.data["id"] === getNodeID.data["id"]
+      );
+
+      filteredEdges.forEach((x) => findNodes.push(x.data["source"]));
+      let filteredNodes = [...filteredNetwork.elements.nodes].filter(
+        (x) =>
+          findNodes.includes(x.data["id"]) ||
+          x.data["id"] === getNodeID.data["id"]
+      );
+
       filteredNetwork.elements.nodes = filteredNodes;
+      filteredNetwork.elements.edges = filteredEdges;
       setNetworkData(filteredNetwork);
     } else {
       setNetworkData(networkDataFile);
@@ -64,10 +81,7 @@ function Reto3() {
     setLoading(false);
   }, [selectedODS]);
 
-  useEffect(() => {
-    console.log("new", networkData);
-  }, [networkData]);
-
+  useEffect(() => {}, [networkData]);
 
   function cytosGraph(network) {
     return (
@@ -124,18 +138,27 @@ function Reto3() {
                     }}
                   />
                 </div> */}
-                <div>Seleccionar ODS: </div>
-                <select
-                  disabled={loading}
-                  onChange={(e) => setODSValue(Number(e.currentTarget.value))}
+                <div>
+                  Seleccionar ODS:{" "}
+                  <select
+                    disabled={loading}
+                    onChange={(e) => setODSValue(Number(e.currentTarget.value))}
+                  >
+                    {items.map(({ label, value }) => (
+                      <option key={value} value={value}>
+                        {label}
+                      </option>
+                    ))}
+                  </select>{" "}
+                </div>
+
+                <div
+                  style={{
+                    backgroundColor: "#fff",
+                    marginTop: 10,
+                    borderRadius: 30,
+                  }}
                 >
-                  {items.map(({ label, value }) => (
-                    <option key={value} value={value}>
-                      {label}
-                    </option>
-                  ))}
-                </select>
-                <div style={{ backgroundColor: "#fff", margin: 40 }}>
                   {networkData != null ? cytosGraph(networkData) : null}
                 </div>
               </CardBody>
