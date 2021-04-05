@@ -2,11 +2,10 @@ import React, { useEffect, useState } from "react";
 // import ReactDOM from "react-dom";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
-import testNetworkData from "../data/2021_Dcontribution_inPEF.json"; //"../data/VINC_PEF_2021.json";
+import networkDataFile from "../data/2021_Dcontribution_inPEF.json"; //"../data/VINC_PEF_2021.json";
 import graphStyle from "../data/ODS_style.json";
 
 // import ODS_1 from '../data/ODS_images/1.jpg'
-
 // import Plot from "react-plotly.js";
 import Cytoscape from "cytoscape";
 // import BubbleSets from 'cytoscape-bubblesets';
@@ -17,28 +16,13 @@ import edgehandles from "cytoscape-edgehandles";
 
 Cytoscape.use(edgehandles);
 
-function importAll(r) {
-  let images = {};
-  r.keys().map((item, index) => {
-    images[item.replace("./", "")] = r(item);
-  });
-  return images;
-}
-
 function Reto3() {
-  const images = importAll(
-    require.context("../data/ODS_images", false, /\.(png|jpe?g|svg)$/)
-  );
-  const layout = {
-    name: "preset",
-    avoidOverlap: true,
-    directed: true,
-    padding: 10,
-  };
-  const [networkData, setNetwork] = useState({});
-  const [value, setValue] = useState(1);
+  const data = JSON.parse(JSON.stringify(networkDataFile));
+  const [networkData, setNetworkData] = useState(data);
+  const [selectedODS, setODSValue] = useState(0);
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([
+    { label: "Todos", value: 0 },
     { label: "ODS 1", value: 1 },
     { label: "ODS 2", value: 2 },
     { label: "ODS 3", value: 3 },
@@ -58,17 +42,49 @@ function Reto3() {
     { label: "ODS 17", value: 17 },
   ]);
 
+  const layout = {
+    name: "preset",
+    avoidOverlap: true,
+    directed: true,
+    padding: 10,
+  };
+
   useEffect(() => {
-    async function filterODS() {
-      console.log(value);
-      // const response = await fetch("https://jsonplaceholder.typicode.com/users");
-      // const body = await response.json();
-      // setItems(body.results.map(({ name }) => ({ label: name, value: name })));
-      setLoading(false);
+    console.log("Selected ODS", selectedODS);
+    if (selectedODS !== 0) {
+      let filteredNetwork = JSON.parse(JSON.stringify(networkDataFile));
+      let filteredNodes = [...filteredNetwork.elements.nodes].filter(
+        (x) => x.data["Outdegree"] === selectedODS
+      );
+      filteredNetwork.elements.nodes = filteredNodes;
+      setNetworkData(filteredNetwork);
+    } else {
+      setNetworkData(networkDataFile);
     }
-    filterODS();
-    console.log(value);
-  }, [value]);
+    setLoading(false);
+  }, [selectedODS]);
+
+  useEffect(() => {
+    console.log("new", networkData);
+  }, [networkData]);
+
+
+  function cytosGraph(network) {
+    return (
+      <CytoscapeComponent
+        cy={(cy) => {
+          cy = cy.center();
+        }}
+        elements={CytoscapeComponent.normalizeElements({
+          nodes: network.elements.nodes,
+          edges: network.elements.edges,
+        })}
+        stylesheet={graphStyle.style}
+        layout={layout}
+        style={{ width: "100%", height: "1000px" }}
+      />
+    );
+  }
 
   return (
     <>
@@ -108,37 +124,19 @@ function Reto3() {
                     }}
                   />
                 </div> */}
-                <div>Seleccionar ODS: </div><select disabled={loading}>
+                <div>Seleccionar ODS: </div>
+                <select
+                  disabled={loading}
+                  onChange={(e) => setODSValue(Number(e.currentTarget.value))}
+                >
                   {items.map(({ label, value }) => (
-                    <option
-                      key={value}
-                      value={value}
-                      onChange={(e) => console.log('here')}
-                      // onChange={(e) => setValue(e.currentTarget.value)}
-                    >
+                    <option key={value} value={value}>
                       {label}
                     </option>
                   ))}
                 </select>
-                {/* 15161A */}
                 <div style={{ backgroundColor: "#fff", margin: 40 }}>
-                  {testNetworkData != null ? (
-                    <CytoscapeComponent
-                      cy={(cy) => {
-                        cy = cy.center();
-                      }}
-                      elements={CytoscapeComponent.normalizeElements({
-                        nodes: testNetworkData.elements.nodes,
-                        edges: testNetworkData.elements.edges,
-                      })}
-                      stylesheet={graphStyle.style}
-                      layout={layout}
-                      // autounselectify={true}
-                      style={{ width: "100%", height: "1000px" }}
-                      // stylesheet={graphStyle.style}
-                      // style={graphStyle}
-                    />
-                  ) : null}
+                  {networkData != null ? cytosGraph(networkData) : null}
                 </div>
               </CardBody>
             </Card>
