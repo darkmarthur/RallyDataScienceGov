@@ -2,7 +2,11 @@ import React, { useEffect, useState } from "react";
 // import ReactDOM from "react-dom";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
-import networkDataFile from "../data/2021_Dcontribution_inPEF.json"; //"../data/VINC_PEF_2021.json";
+import networkDataFile2021 from "../data/2021_Dcontribution_inPEF.json";
+import networkDataFile2020 from "../data/2021_Dcontribution_inPEF.json";
+import networkDataFile2019 from "../data/2021_Dcontribution_inPEF.json";
+import networkDataFile2018 from "../data/2021_Dcontribution_inPEF.json";
+
 import graphStyle from "../data/ODS_style.json";
 
 // import ODS_1 from '../data/ODS_images/1.jpg'
@@ -17,9 +21,16 @@ import edgehandles from "cytoscape-edgehandles";
 Cytoscape.use(edgehandles);
 
 function Reto3() {
-  const data = JSON.parse(JSON.stringify(networkDataFile));
-  const [networkData, setNetworkData] = useState(data);
+  const data2018 = JSON.parse(JSON.stringify(networkDataFile2018));
+  const data2019 = JSON.parse(JSON.stringify(networkDataFile2019));
+  const data2020 = JSON.parse(JSON.stringify(networkDataFile2020));
+  const data2021 = JSON.parse(JSON.stringify(networkDataFile2021));
+
+  const [selectedNetworkData, setNetworkData] = useState(
+    JSON.parse(JSON.stringify(data2021))
+  );
   const [selectedODS, setODSValue] = useState(0);
+  const [selectedYear, setYear] = useState(2021);
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([
     { label: "Todos", value: 0 },
@@ -42,6 +53,25 @@ function Reto3() {
     { label: "ODS 17", value: 17 },
   ]);
 
+  const [yearsList, setYears] = useState([
+    {
+      label: "2018",
+      value: 2018,
+    },
+    {
+      label: "2019",
+      value: 2019,
+    },
+    {
+      label: "2020",
+      value: 2020,
+    },
+    {
+      label: "2021",
+      value: 2021,
+    },
+  ]);
+
   const layout = {
     name: "preset",
     avoidOverlap: true,
@@ -49,10 +79,26 @@ function Reto3() {
     padding: 10,
   };
 
-  useEffect(() => {
-    console.log("Selected ODS", selectedODS);
+  async function filterODS() {
+    let filteredNetwork = JSON.parse(JSON.stringify(data2021));
+    switch (yearsList) {
+      case 2021:
+        filteredNetwork = JSON.parse(JSON.stringify(data2021));
+        break;
+      case 2020:
+        filteredNetwork = JSON.parse(JSON.stringify(data2020));
+        break;
+      case 2019:
+        filteredNetwork = JSON.parse(JSON.stringify(data2019));
+        break;
+      case 2018:
+        filteredNetwork = JSON.parse(JSON.stringify(data2018));
+        break;
+      default:
+        break;
+    }
     if (selectedODS !== 0) {
-      let filteredNetwork = JSON.parse(JSON.stringify(networkDataFile));
+      console.log("filteredNetwork", filteredNetwork);
       let findNodes = new Array(0);
 
       let getNodeID = [...filteredNetwork.elements.nodes].find(
@@ -74,14 +120,23 @@ function Reto3() {
 
       filteredNetwork.elements.nodes = filteredNodes;
       filteredNetwork.elements.edges = filteredEdges;
-      setNetworkData(filteredNetwork);
-    } else {
-      setNetworkData(networkDataFile);
     }
+    setNetworkData(filteredNetwork);
     setLoading(false);
+  }
+
+  useEffect(() => {
+    filterODS();
   }, [selectedODS]);
 
-  useEffect(() => {}, [networkData]);
+  useEffect(() => {
+    console.log("selected year", selectedYear);
+    filterODS();
+  }, [selectedYear]);
+
+  useEffect(() => {
+    console.log("network updated", selectedNetworkData);
+  }, [selectedNetworkData]);
 
   function cytosGraph(network) {
     return (
@@ -120,25 +175,19 @@ function Reto3() {
                     Sostenible
                   </a>
                 </p>
-                {/* <div style={{ backgroundColor: "#fff", margin: 40 }}>
-                  <Plot
-                    style={{ width: "100%" }}
-                    data={[
-                      {
-                        x: [1, 2, 3],
-                        y: [2, 6, 3],
-                        type: "scatter",
-                        mode: "lines+markers",
-                        marker: { color: "red" },
-                      },
-                      { type: "bar", x: [1, 2, 3], y: [2, 5, 3] },
-                    ]}
-                    layout={{
-                      title: "A Fancy Plot",
-                    }}
-                  />
-                </div> */}
                 <div>
+                  Seleccionar Año:{" "}
+                  <select
+                    value={selectedYear}
+                    disabled={loading}
+                    onChange={(e) => setYear(Number(e.currentTarget.value))}
+                  >
+                    {yearsList.map(({ label, value }) => (
+                      <option key={value} value={value}>
+                        {label}
+                      </option>
+                    ))}
+                  </select>{" "}
                   Seleccionar ODS:{" "}
                   <select
                     disabled={loading}
@@ -159,7 +208,9 @@ function Reto3() {
                     borderRadius: 30,
                   }}
                 >
-                  {networkData != null ? cytosGraph(networkData) : null}
+                  {selectedNetworkData != null
+                    ? cytosGraph(selectedNetworkData)
+                    : null}
                 </div>
               </CardBody>
             </Card>
@@ -171,3 +222,22 @@ function Reto3() {
 }
 
 export default Reto3;
+
+/* <div style={{ backgroundColor: "#fff", margin: 40 }}>
+<Plot
+  style={{ width: "100%" }}
+  data={[
+    {
+      x: [1, 2, 3],
+      y: [2, 6, 3],
+      type: "scatter",
+      mode: "lines+markers",
+      marker: { color: "red" },
+    },
+    { type: "bar", x: [1, 2, 3], y: [2, 5, 3] },
+  ]}
+  layout={{
+    title: "A Fancy Plot",
+  }}
+/>
+</div>  */
