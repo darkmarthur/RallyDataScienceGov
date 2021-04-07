@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
 import networkDataFile2021 from "../data/2021_Dcontribution_inPEF.json";
-import networkDataFile2020 from "../data/2021_Dcontribution_inPEF.json";
+import networkDataFile2020 from "../data/2021_Core_PP.cyjs";
 import networkDataFile2019 from "../data/2021_Dcontribution_inPEF.json";
 import networkDataFile2018 from "../data/2021_Dcontribution_inPEF.json";
 
