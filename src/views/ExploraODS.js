@@ -20,7 +20,7 @@ import edgehandles from "cytoscape-edgehandles";
 
 Cytoscape.use(edgehandles);
 
-function Reto3() {
+function ExploraODS() {
   const data2018 = JSON.parse(JSON.stringify(networkDataFile2018));
   const data2019 = JSON.parse(JSON.stringify(networkDataFile2019));
   const data2020 = JSON.parse(JSON.stringify(networkDataFile2020));

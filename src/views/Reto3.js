@@ -3,7 +3,7 @@ import React from "react";
 // reactstrap components
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
-function Blog() {
+function Reto3() {
   return (
     <>
       <div className="content">
