@@ -17,6 +17,37 @@ function Blog() {
                 </CardTitle>
               </CardHeader>
               <CardBody>
+              <p class="title" style="text-align: justify;">Los Objetivos de Desarrollo Sostenible como una red de programas presupuestarios para la vigilancia ciudadana del presupuesto</p>
+                <p>&nbsp;</p>
+                <p><span>Nuestra propuesta de política pública es establecer un </span><span style="font-weight:700">Observatorio Ciudadano del destino presupuestal enfocado al cumplimiento de los ODS</span>&nbsp;que permita dar seguimiento y asistir en la toma de decisiones. </p>
+                <p>Para este fin proporcionamos datos curados y visualización de la relación entre los ODS y los PPs. </p>
+                <p>Hasta el momento proporcionamos:</p>
+
+                <ul><li>Una base de datos con información curada del 2018 al 2021 de:</li>
+                </ul>
+
+
+                <ul><li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible</li>
+                <li>Presupuesto de Egresos de la Federación</li>
+                </ul>
+
+
+                <ul><li>Modelos de redes para cada año presupuestal (4) (formato JSON)</li>
+                </ul>
+
+
+                <ul><li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible (Vinculación)</li>
+                <li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible con presupuesto asignado (PEF)</li>
+                <li>Programas Presupuestarios compartidos entre años con presupuesto asignado (Core)</li>
+                <li>Programas Presupuestarios no incluidos en el Core (Accesorios)</li>
+                </ul>
+
+
+                <ul><li>Cálculo de métricas locales y globales embebidos en las redes</li>
+                <li>Un módulo de Python (en proceso de documentación) para limpieza de datos y replicar el análisis de las bases de datos así como el manejo de las redes proporcionadas</li>
+                <li>Visualización de las redes en el sitio para observar la relación de PPs y ODS de interés</li>
+                </ul>
+                
                 <h1>Convocatoria</h1>
                 <p>
                   Este sitio ha sido creado para proveer los datos recopilados y
