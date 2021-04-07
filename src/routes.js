@@ -14,6 +14,8 @@ import Reto2 from "views/Reto2.js";
 import Reto3 from "views/Reto3.js";
 import Equipo from "views/Equipo.js";
 import Contacto from "views/Contacto.js";
+import ExploraODS from "views/ExploraODS.js";
+import Blog from "views/Blog.js";
 
 var routes = [
   {
@@ -54,6 +56,22 @@ var routes = [
     rtlName: "لوحة القيادة",
     icon: "tim-icons icon-badge",
     component: Equipo,
+    layout: "/admin",
+  },
+  {
+    path: "/explora",
+    name: "Explora Presupuestos ODS ",
+    rtlName: "لوحة القيادة",
+    icon: "tim-icons icon-coins",
+    component: ExploraODS,
+    layout: "/admin",
+  },
+  {
+    path: "/blog",
+    name: "Blog",
+    rtlName: "لوحة القيادة",
+    icon: "tim-icons icon-chat-33",
+    component: Blog,
     layout: "/admin",
   },
   {
