@@ -31,6 +31,7 @@ function ExploraODS() {
   );
   const [selectedODS, setODSValue] = useState(0);
   const [selectedYear, setYear] = useState(2021);
+  //const [selectedType, setType] = useState(0);
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([
     { label: "Todos", value: 0 },
@@ -71,6 +72,25 @@ function ExploraODS() {
       value: 2021,
     },
   ]);
+
+  {/* const [typeList, setTypes] = useState([
+    {
+      label: "Vinculacion",
+      value: 0,
+    },
+    {
+      label: "PEF",
+      value: 1,
+    },
+    {
+      label: "Core_PP",
+      value: 2,
+    },
+    {
+      label: "Accessory_PP",
+      value: 3,
+    },
+  ]);*/}
 
   const layout = {
     name: "preset",
