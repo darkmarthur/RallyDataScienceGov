@@ -51,14 +51,6 @@ var routes = [
     layout: "/admin",
   },
   {
-    path: "/equipo",
-    name: "Equipo",
-    rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-badge",
-    component: Equipo,
-    layout: "/admin",
-  },
-  {
     path: "/explora",
     name: "Explora Presupuestos ODS ",
     rtlName: "لوحة القيادة",
@@ -72,6 +64,14 @@ var routes = [
     rtlName: "لوحة القيادة",
     icon: "tim-icons icon-chat-33",
     component: Blog,
+    layout: "/admin",
+  },
+  {
+    path: "/equipo",
+    name: "Equipo",
+    rtlName: "لوحة القيادة",
+    icon: "tim-icons icon-badge",
+    component: Equipo,
     layout: "/admin",
   },
   {
