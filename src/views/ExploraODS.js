@@ -39,7 +39,7 @@ function ExploraODS() {
 
   const [selectedODS, setODSValue] = useState(0);
   const [selectedYear, setYear] = useState(2021);
-  //const [selectedType, setType] = useState(0);
+  const [selectedType, setType] = useState(0);
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([
     { label: "Todos", value: 0 },
@@ -81,8 +81,7 @@ function ExploraODS() {
     },
   ]);
 
-  {
-    /* const [typeList, setTypes] = useState([
+  const [typeList, setTypes] = useState([
     {
       label: "Vinculacion",
       value: 0,
@@ -99,8 +98,15 @@ function ExploraODS() {
       label: "Accessory_PP",
       value: 3,
     },
-  ]);*/
-  }
+  ]);
+
+
+  const [listODS, setODS] = useState([
+
+  ]);
+
+
+
 
   async function filterODS() {
     let filteredNetwork = JSON.parse(JSON.stringify(data2021));
@@ -160,6 +166,11 @@ function ExploraODS() {
   }, [selectedODS]);
 
   useEffect(() => {
+    console.log("selected type", selectedType);
+    filterODS();
+  }, [selectedType]);
+
+  useEffect(() => {
     console.log("selected year", selectedYear);
     filterODS();
   }, [selectedYear]);
@@ -192,7 +203,9 @@ function ExploraODS() {
           <Col md="12">
             <Card>
               <CardHeader className="mb-5">
-                {/* <h5 className="card-category">Black Table Heading</h5> */}
+                <h5 className="card-category">
+                  Explora ODS y Programas Presupuestarios
+                </h5>
                 <CardTitle tag="h2"></CardTitle>
               </CardHeader>
               <CardBody>
@@ -204,32 +217,57 @@ function ExploraODS() {
                     Sostenible
                   </a>
                 </p>
-                <div>
-                  Seleccionar Año:{" "}
-                  <select
-                    value={selectedYear}
-                    disabled={loading}
-                    onChange={(e) => setYear(Number(e.currentTarget.value))}
-                  >
-                    {yearsList.map(({ label, value }) => (
-                      <option key={value} value={value}>
-                        {label}
-                      </option>
-                    ))}
-                  </select>{" "}
-                  Seleccionar ODS:{" "}
-                  <select
-                    disabled={loading}
-                    onChange={(e) => setODSValue(Number(e.currentTarget.value))}
-                  >
-                    {items.map(({ label, value }) => (
-                      <option key={value} value={value}>
-                        {label}
-                      </option>
-                    ))}
-                  </select>{" "}
-                </div>
-
+                <Row>
+                  <Col md="4">
+                    <b style={{ color: "#fff" }}>Seleccionar Tipo: </b>
+                    <div class="select-dropdown">
+                      <select
+                        value={selectedType}
+                        disabled={loading}
+                        onChange={(e) => setType(Number(e.currentTarget.value))}
+                      >
+                        {typeList.map(({ label, value }) => (
+                          <option key={value} value={value}>
+                            {label}
+                          </option>
+                        ))}
+                      </select>{" "}
+                    </div>
+                  </Col>
+                  <Col md="4">
+                    <b style={{ color: "#fff" }}> Seleccionar Año: </b>
+                    <div class="select-dropdown">
+                      <select
+                        value={selectedYear}
+                        disabled={loading}
+                        onChange={(e) => setYear(Number(e.currentTarget.value))}
+                      >
+                        {yearsList.map(({ label, value }) => (
+                          <option key={value} value={value}>
+                            {label}
+                          </option>
+                        ))}
+                      </select>{" "}
+                    </div>
+                  </Col>
+                  <Col md="4">
+                    <b style={{ color: "#fff" }}> Seleccionar ODS: </b>
+                    <div class="select-dropdown">
+                      <select
+                        disabled={loading}
+                        onChange={(e) =>
+                          setODSValue(Number(e.currentTarget.value))
+                        }
+                      >
+                        {items.map(({ label, value }) => (
+                          <option key={value} value={value}>
+                            {label}
+                          </option>
+                        ))}
+                      </select>{" "}
+                    </div>
+                  </Col>
+                </Row>
                 <div
                   style={{
                     backgroundColor: "#fff",
