@@ -25,17 +25,19 @@ function Reto3() {
                   <p>Para este fin proporcionamos datos curados y visualización de la relación entre los ODS y los PPs. </p>
                   <p>Hasta el momento proporcionamos:</p>
                   <ul><li>Una base de datos con información curada del 2018 al 2021 de:</li>
-                  </ul>
                   <ul><li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible</li>
                     <li>Presupuesto de Egresos de la Federación</li>
                   </ul>
-                  <ul><li>Modelos de redes para cada año presupuestal (4) (formato JSON)</li>
                   </ul>
+
+                  <ul><li>Modelos de redes para cada año presupuestal (4) (formato JSON)</li>
                   <ul><li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible (Vinculación)</li>
                     <li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible con presupuesto asignado (PEF)</li>
                     <li>Programas Presupuestarios compartidos entre años con presupuesto asignado (Core)</li>
                     <li>Programas Presupuestarios no incluidos en el Core (Accesorios)</li>
                   </ul>
+                  </ul>
+
                   <ul><li>Cálculo de métricas locales y globales embebidos en las redes</li>
                     <li>Un módulo de Python (en proceso de documentación) para limpieza de datos y replicar el análisis de las bases de datos así como el manejo de las redes proporcionadas</li>
                     <li>Visualización de las redes en el sitio para observar la relación de PPs y ODS de interés</li>
@@ -69,6 +71,111 @@ function Reto3() {
                   resultados correspondientes en el menú lateral del sitio
                 </p>
                 <hr />
+                <div
+                  className="row"
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/2.1jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/2.2.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/2.3.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/2.4.jpg").default}
+                    />
+                  </div>
+                </div>
+                <div
+                  className="row"
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.1.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.2.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.3.jpg").default}
+                    />
+                  </div>
+                </div>
+
+                <div
+                  className="row"
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.4.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.5.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.6.jpg").default}
+                    />
+                  </div>
+                </div>
+
+
+
+
 
                 <div
                   className="row"

@@ -17,6 +17,45 @@ function Blog() {
                 </CardTitle>
               </CardHeader>
               <CardBody>
+
+              <div
+                  className="row"
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/1.1jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/1.2.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/1.3.jpg").default}
+                    />
+                  </div>
+                  {/*<div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/2.4.jpg").default}
+                    />
+                  </div>*/}
+                </div>
               
                 
                 <h1>Convocatoria</h1>
