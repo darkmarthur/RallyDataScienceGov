@@ -57,6 +57,7 @@ function ExploraODS() {
   const CACHE_ACCESORY2018 = JSON.parse(JSON.stringify(ACCESORY2018));
 
   const [loading, setLoading] = useState(true);
+  const [countPP, setPPCount] = useState(0);
   const [selectedODS, setODSValue] = useState(0);
   const [selectedYear, setYear] = useState(2021);
   const [selectedType, setType] = useState("VINC");
@@ -160,6 +161,10 @@ function ExploraODS() {
   useEffect(() => {
     console.log("network updated", selectedNetworkData.DATA);
   }, [selectedNetworkData]);
+  
+  useEffect(() => {
+    console.log("PP count", countPP);
+  }, [countPP]);
 
   async function filterODS() {
     let filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2021)); // DEFAULT
@@ -197,9 +202,6 @@ function ExploraODS() {
     }
 
     if (selectedODS !== 0) {
-      console.log("filteredNetwork", filteredNetwork);
-      let findNodes = new Array(0);
-
       let getNodeID = [...filteredNetwork.elements.nodes].find(
         (x) => Number(x.data["name"]) === selectedODS
       );
@@ -210,7 +212,9 @@ function ExploraODS() {
           x.data["id"] === getNodeID.data["id"]
       );
 
+      let findNodes = new Array(0);
       filteredEdges.forEach((x) => findNodes.push(x.data["source"]));
+
       let filteredNodes = [...filteredNetwork.elements.nodes].filter(
         (x) =>
           findNodes.includes(x.data["id"]) ||
@@ -223,6 +227,11 @@ function ExploraODS() {
 
     const setData = { DATA: filteredNetwork };
     setNetworkData(setData);
+    setPPCount(
+      selectedODS !== 0
+        ? filteredNetwork.elements.nodes.length - 1
+        : filteredNetwork.elements.nodes.length - 17
+    );
     setLoading(false);
   }
 
@@ -324,6 +333,14 @@ function ExploraODS() {
                     </div>
                   </Col>
                 </Row>
+                <div>
+                  <hr></hr>
+                  <b style={{ color: "#fff" }}>
+                    {" "}
+                    Cantidad de Programas Presupuestarios:{" "}
+                  </b>
+                  <b style={{ color: "#fff" }}>{countPP}</b>
+                </div>
                 <div
                   style={{
                     backgroundColor: "#fff",
