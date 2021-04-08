@@ -36,13 +36,6 @@ import edgehandles from "cytoscape-edgehandles";
 Cytoscape.use(edgehandles);
 
 function ExploraODS() {
-  const layout = {
-    name: "preset",
-    avoidOverlap: true,
-    directed: true,
-    padding: 10,
-  };
-
   const CACHE_VINC2018 = JSON.parse(JSON.stringify(VINC2018));
   const CACHE_VINC2019 = JSON.parse(JSON.stringify(VINC2019));
   const CACHE_VINC2020 = JSON.parse(JSON.stringify(VINC2020));
@@ -63,17 +56,14 @@ function ExploraODS() {
   const CACHE_ACCESORY2019 = JSON.parse(JSON.stringify(ACCESORY2019));
   const CACHE_ACCESORY2018 = JSON.parse(JSON.stringify(ACCESORY2018));
 
-  const [listODS, setODS] = useState([]);
-
-  const [selectedNetworkData, setNetworkData] = useState({
-    DATA: JSON.parse(JSON.stringify(CACHE_VINC2021)),
-  });
-
+  const [loading, setLoading] = useState(true);
   const [selectedODS, setODSValue] = useState(0);
   const [selectedYear, setYear] = useState(2021);
   const [selectedType, setType] = useState("VINC");
-  const [loading, setLoading] = useState(true);
-  const [items, setItems] = useState([
+  const [selectedNetworkData, setNetworkData] = useState({
+    DATA: JSON.parse(JSON.stringify(CACHE_VINC2021)),
+  });
+  const [items] = useState([
     { label: "Todos", value: 0 },
     { label: "ODS 1", value: 1 },
     { label: "ODS 2", value: 2 },
@@ -93,8 +83,7 @@ function ExploraODS() {
     { label: "ODS 16", value: 16 },
     { label: "ODS 17", value: 17 },
   ]);
-
-  const [yearsList, setYears] = useState([
+  const [yearsList] = useState([
     {
       label: "2018",
       value: 2018,
@@ -128,8 +117,7 @@ function ExploraODS() {
       CACHE_ACCESORY: CACHE_ACCESORY2021,
     },
   ]);
-
-  const [typeList, setTypes] = useState([
+  const [typeList] = useState([
     {
       label: "Vinculacion",
       value: "VINC",
@@ -147,21 +135,62 @@ function ExploraODS() {
       value: "ACCESORY",
     },
   ]);
+  const layout = {
+    name: "preset",
+    avoidOverlap: true,
+    directed: true,
+    padding: 10,
+  };
+
+  useEffect(() => {
+    filterODS();
+    console.log("selected ODS", selectedODS);
+  }, [selectedODS]);
+
+  useEffect(() => {
+    console.log("selected type", selectedType);
+    filterODS();
+  }, [selectedType]);
+
+  useEffect(() => {
+    console.log("selected year", selectedYear);
+    filterODS();
+  }, [selectedYear]);
+
+  useEffect(() => {
+    console.log("network updated", selectedNetworkData.DATA);
+  }, [selectedNetworkData]);
 
   async function filterODS() {
     let filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2021)); // DEFAULT
     switch (selectedType) {
       case "VINC":
-        filteredNetwork = JSON.parse(JSON.stringify(yearsList.find(x => x.value === selectedYear).CACHE_VINC));
+        filteredNetwork = JSON.parse(
+          JSON.stringify(
+            yearsList.find((x) => x.value === selectedYear).CACHE_VINC
+          )
+        );
         break;
       case "PEF":
-        filteredNetwork = JSON.parse(JSON.stringify(yearsList.find(x => x.value === selectedYear).CACHE_PEF));
+        filteredNetwork = JSON.parse(
+          JSON.stringify(
+            yearsList.find((x) => x.value === selectedYear).CACHE_PEF
+          )
+        );
         break;
       case "CORE":
-        filteredNetwork = JSON.parse(JSON.stringify(yearsList.find(x => x.value === selectedYear).CACHE_CORE));
+        filteredNetwork = JSON.parse(
+          JSON.stringify(
+            yearsList.find((x) => x.value === selectedYear).CACHE_CORE
+          )
+        );
         break;
       case "ACCESORY":
-        filteredNetwork = JSON.parse(JSON.stringify(yearsList.find(x => x.value === selectedYear).CACHE_ACCESORY));
+        filteredNetwork = JSON.parse(
+          JSON.stringify(
+            yearsList.find((x) => x.value === selectedYear).CACHE_ACCESORY
+          )
+        );
         break;
       default:
         break;
@@ -197,29 +226,20 @@ function ExploraODS() {
     setLoading(false);
   }
 
-  useEffect(() => {
-    filterODS();
-  }, [selectedODS]);
-
-  useEffect(() => {
-    console.log("selected type", selectedType);
-    filterODS();
-  }, [selectedType]);
-
-  useEffect(() => {
-    console.log("selected year", selectedYear);
-    filterODS();
-  }, [selectedYear]);
-
-  useEffect(() => {
-    console.log("network updated", selectedNetworkData.DATA);
-  }, [selectedNetworkData]);
-
   function cytosGraph(network) {
     return (
       <CytoscapeComponent
         cy={(cy) => {
           cy = cy.center();
+          cy.$("node").on("grab", function (e) {
+            var ele = e.target;
+            ele.connectedEdges().style({ "line-color": "red" });
+          });
+
+          cy.$("node").on("select", function (e) {
+            var ele = e.target;
+            ele.connectedEdges().style({ "line-color": "#red" });
+          });
         }}
         elements={CytoscapeComponent.normalizeElements({
           nodes: network.elements.nodes,
