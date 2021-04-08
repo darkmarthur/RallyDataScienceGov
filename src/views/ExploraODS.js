@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
 import networkDataFile2021 from "../data/2021_Dcontribution_inPEF.json";
-import networkDataFile2020 from "../data/2021_Core_PP.cyjs";
+import networkDataFile2020 from "../data/2021_Dcontribution_inPEF.json";
 import networkDataFile2019 from "../data/2021_Dcontribution_inPEF.json";
 import networkDataFile2018 from "../data/2021_Dcontribution_inPEF.json";
 
@@ -21,14 +21,22 @@ import edgehandles from "cytoscape-edgehandles";
 Cytoscape.use(edgehandles);
 
 function ExploraODS() {
+  const layout = {
+    name: "preset",
+    avoidOverlap: true,
+    directed: true,
+    padding: 10,
+  };
+
   const data2018 = JSON.parse(JSON.stringify(networkDataFile2018));
   const data2019 = JSON.parse(JSON.stringify(networkDataFile2019));
   const data2020 = JSON.parse(JSON.stringify(networkDataFile2020));
   const data2021 = JSON.parse(JSON.stringify(networkDataFile2021));
 
-  const [selectedNetworkData, setNetworkData] = useState(
-    JSON.parse(JSON.stringify(data2021))
-  );
+  const [selectedNetworkData, setNetworkData] = useState({
+    DATA: JSON.parse(JSON.stringify(data2021)),
+  });
+
   const [selectedODS, setODSValue] = useState(0);
   const [selectedYear, setYear] = useState(2021);
   //const [selectedType, setType] = useState(0);
@@ -73,7 +81,8 @@ function ExploraODS() {
     },
   ]);
 
-  {/* const [typeList, setTypes] = useState([
+  {
+    /* const [typeList, setTypes] = useState([
     {
       label: "Vinculacion",
       value: 0,
@@ -90,33 +99,32 @@ function ExploraODS() {
       label: "Accessory_PP",
       value: 3,
     },
-  ]);*/}
-
-  const layout = {
-    name: "preset",
-    avoidOverlap: true,
-    directed: true,
-    padding: 10,
-  };
+  ]);*/
+  }
 
   async function filterODS() {
     let filteredNetwork = JSON.parse(JSON.stringify(data2021));
-    switch (yearsList) {
+    switch (selectedYear) {
       case 2021:
         filteredNetwork = JSON.parse(JSON.stringify(data2021));
+        console.log("selectedYear", selectedYear);
         break;
       case 2020:
         filteredNetwork = JSON.parse(JSON.stringify(data2020));
+        console.log("selectedYear", selectedYear);
         break;
       case 2019:
         filteredNetwork = JSON.parse(JSON.stringify(data2019));
+        console.log("selectedYear", selectedYear);
         break;
       case 2018:
         filteredNetwork = JSON.parse(JSON.stringify(data2018));
+        console.log("selectedYear", selectedYear);
         break;
       default:
         break;
     }
+
     if (selectedODS !== 0) {
       console.log("filteredNetwork", filteredNetwork);
       let findNodes = new Array(0);
@@ -141,7 +149,9 @@ function ExploraODS() {
       filteredNetwork.elements.nodes = filteredNodes;
       filteredNetwork.elements.edges = filteredEdges;
     }
-    setNetworkData(filteredNetwork);
+
+    const setData = { DATA: filteredNetwork };
+    setNetworkData(setData);
     setLoading(false);
   }
 
@@ -155,7 +165,7 @@ function ExploraODS() {
   }, [selectedYear]);
 
   useEffect(() => {
-    console.log("network updated", selectedNetworkData);
+    console.log("network updated", selectedNetworkData.DATA);
   }, [selectedNetworkData]);
 
   function cytosGraph(network) {
@@ -186,7 +196,6 @@ function ExploraODS() {
                 <CardTitle tag="h2"></CardTitle>
               </CardHeader>
               <CardBody>
-
                 <p>
                   Este sitio ha sido creado para proveer los datos recopilados y
                   calculados por el equipo <b>DataOpossum</b> para el{" "}
@@ -228,8 +237,8 @@ function ExploraODS() {
                     borderRadius: 30,
                   }}
                 >
-                  {selectedNetworkData != null
-                    ? cytosGraph(selectedNetworkData)
+                  {selectedNetworkData.DATA != null
+                    ? cytosGraph(selectedNetworkData.DATA)
                     : null}
                 </div>
               </CardBody>
@@ -261,6 +270,3 @@ export default ExploraODS;
   }}
 />
 </div>  */
-
-
-
