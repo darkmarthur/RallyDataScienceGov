@@ -61,6 +61,13 @@ function ExploraODS() {
   const [selectedODS, setODSValue] = useState(0);
   const [selectedYear, setYear] = useState(2021);
   const [selectedType, setType] = useState("VINC");
+  const [selectedLayout, setLayout] = useState("Red");
+  const [selectedLayoutData, setLayoutData] = useState({
+    name: "preset",
+    avoidOverlap: true,
+    directed: true,
+    padding: 10,
+  });
   const [selectedNetworkData, setNetworkData] = useState({
     DATA: JSON.parse(JSON.stringify(CACHE_VINC2021)),
   });
@@ -136,12 +143,31 @@ function ExploraODS() {
       value: "ACCESORY",
     },
   ]);
-  const layout = {
-    name: "preset",
-    avoidOverlap: true,
-    directed: true,
-    padding: 10,
-  };
+  const [layoutList] = useState([
+    {
+      label: "Red",
+      value: "Red",
+      data: { name: "preset", avoidOverlap: true, directed: true, padding: 10 },
+    },
+    {
+      label: "Grid",
+      value: "Grid",
+      data: { name: "grid", avoidOverlap: true, directed: true, padding: 10 },
+    },
+    {
+      label: "Random",
+      value: "Random",
+      data: { name: "random", avoidOverlap: true, directed: true, padding: 10 },
+    },
+  ]);
+
+  useEffect(() => {
+    console.log("PP count", countPP);
+  }, [countPP]);
+  
+  useEffect(() => {
+    console.log("network updated", selectedNetworkData.DATA);
+  }, [selectedNetworkData]);
 
   useEffect(() => {
     filterODS();
@@ -159,14 +185,14 @@ function ExploraODS() {
   }, [selectedYear]);
 
   useEffect(() => {
-    console.log("network updated", selectedNetworkData.DATA);
-  }, [selectedNetworkData]);
-  
-  useEffect(() => {
-    console.log("PP count", countPP);
-  }, [countPP]);
+    console.log("selectedLayout", selectedLayout);
+    setLoading(true)
+    setLayoutData(layoutList.find((x) => x.value === selectedLayout).data);
+    setLoading(false)
+  }, [selectedLayout]);
 
   async function filterODS() {
+    setLoading(true)
     let filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2021)); // DEFAULT
     switch (selectedType) {
       case "VINC":
@@ -255,7 +281,7 @@ function ExploraODS() {
           edges: network.elements.edges,
         })}
         stylesheet={graphStyle.style}
-        layout={layout}
+        layout={selectedLayoutData}
         style={{ width: "100%", height: "1000px" }}
       />
     );
@@ -283,7 +309,7 @@ function ExploraODS() {
                   </a>
                 </p>
                 <Row>
-                  <Col md="4">
+                  <Col md="3">
                     <b style={{ color: "#fff" }}>Seleccionar Tipo: </b>
                     <div className="select-dropdown">
                       <select
@@ -299,7 +325,7 @@ function ExploraODS() {
                       </select>{" "}
                     </div>
                   </Col>
-                  <Col md="4">
+                  <Col md="3">
                     <b style={{ color: "#fff" }}> Seleccionar Año: </b>
                     <div className="select-dropdown">
                       <select
@@ -315,7 +341,7 @@ function ExploraODS() {
                       </select>{" "}
                     </div>
                   </Col>
-                  <Col md="4">
+                  <Col md="3">
                     <b style={{ color: "#fff" }}> Seleccionar ODS: </b>
                     <div className="select-dropdown">
                       <select
@@ -332,15 +358,33 @@ function ExploraODS() {
                       </select>{" "}
                     </div>
                   </Col>
+                  <Col md="3">
+                    <b style={{ color: "#fff" }}> Seleccionar Layout: </b>
+                    <div className="select-dropdown">
+                      <select
+                        value={selectedLayout}
+                        disabled={loading}
+                        onChange={(e) => setLayout(e.currentTarget.value)}
+                      >
+                        {layoutList.map(({ label, value }) => (
+                          <option key={value} value={value}>
+                            {label}
+                          </option>
+                        ))}
+                      </select>{" "}
+                    </div>
+                  </Col>
                 </Row>
-                <div>
-                  <hr></hr>
-                  <b style={{ color: "#fff" }}>
-                    {" "}
-                    Cantidad de Programas Presupuestarios:{" "}
-                  </b>
-                  <b style={{ color: "#fff" }}>{countPP}</b>
-                </div>
+                <hr />
+                <Row>
+                  <Col md="12">
+                    <b style={{ color: "#fff" }}>
+                      {" "}
+                      Cantidad de Programas Presupuestarios:{" "}
+                    </b>
+                    <b style={{ color: "#fff" }}>{countPP}</b>
+                  </Col>
+                </Row>
                 <div
                   style={{
                     backgroundColor: "#fff",
