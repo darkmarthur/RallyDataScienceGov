@@ -1,160 +1,9 @@
-import React, { useEffect, useState } from "react";
-// import ReactDOM from "react-dom";
+import React from "react";
+
+// reactstrap components
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
-import networkDataFile2021 from "../data/2021_Dcontribution_inPEF.json";
-import networkDataFile2020 from "../data/2021_Core_PP.cyjs";
-import networkDataFile2019 from "../data/2021_Dcontribution_inPEF.json";
-import networkDataFile2018 from "../data/2021_Dcontribution_inPEF.json";
-
-import graphStyle from "../data/ODS_style.json";
-
-// import ODS_1 from '../data/ODS_images/1.jpg'
-// import Plot from "react-plotly.js";
-import Cytoscape from "cytoscape";
-// import BubbleSets from 'cytoscape-bubblesets';
-// import COSEBilkent from "cytoscape-cose-bilkent";
-// import cola from "cytoscape-cola";
-import CytoscapeComponent from "react-cytoscapejs";
-import edgehandles from "cytoscape-edgehandles";
-
-Cytoscape.use(edgehandles);
-
 function Reto3() {
-  const data2018 = JSON.parse(JSON.stringify(networkDataFile2018));
-  const data2019 = JSON.parse(JSON.stringify(networkDataFile2019));
-  const data2020 = JSON.parse(JSON.stringify(networkDataFile2020));
-  const data2021 = JSON.parse(JSON.stringify(networkDataFile2021));
-
-  const [selectedNetworkData, setNetworkData] = useState(
-    JSON.parse(JSON.stringify(data2021))
-  );
-  const [selectedODS, setODSValue] = useState(0);
-  const [selectedYear, setYear] = useState(2021);
-  const [loading, setLoading] = useState(true);
-  const [items, setItems] = useState([
-    { label: "Todos", value: 0 },
-    { label: "ODS 1", value: 1 },
-    { label: "ODS 2", value: 2 },
-    { label: "ODS 3", value: 3 },
-    { label: "ODS 4", value: 4 },
-    { label: "ODS 5", value: 5 },
-    { label: "ODS 6", value: 6 },
-    { label: "ODS 7", value: 7 },
-    { label: "ODS 8", value: 8 },
-    { label: "ODS 9", value: 9 },
-    { label: "ODS 10", value: 10 },
-    { label: "ODS 11", value: 11 },
-    { label: "ODS 12", value: 12 },
-    { label: "ODS 13", value: 13 },
-    { label: "ODS 14", value: 14 },
-    { label: "ODS 15", value: 15 },
-    { label: "ODS 16", value: 16 },
-    { label: "ODS 17", value: 17 },
-  ]);
-
-  const [yearsList, setYears] = useState([
-    {
-      label: "2018",
-      value: 2018,
-    },
-    {
-      label: "2019",
-      value: 2019,
-    },
-    {
-      label: "2020",
-      value: 2020,
-    },
-    {
-      label: "2021",
-      value: 2021,
-    },
-  ]);
-
-  const layout = {
-    name: "preset",
-    avoidOverlap: true,
-    directed: true,
-    padding: 10,
-  };
-
-  async function filterODS() {
-    let filteredNetwork = JSON.parse(JSON.stringify(data2021));
-    switch (yearsList) {
-      case 2021:
-        filteredNetwork = JSON.parse(JSON.stringify(data2021));
-        break;
-      case 2020:
-        filteredNetwork = JSON.parse(JSON.stringify(data2020));
-        break;
-      case 2019:
-        filteredNetwork = JSON.parse(JSON.stringify(data2019));
-        break;
-      case 2018:
-        filteredNetwork = JSON.parse(JSON.stringify(data2018));
-        break;
-      default:
-        break;
-    }
-    if (selectedODS !== 0) {
-      console.log("filteredNetwork", filteredNetwork);
-      let findNodes = new Array(0);
-
-      let getNodeID = [...filteredNetwork.elements.nodes].find(
-        (x) => Number(x.data["name"]) === selectedODS
-      );
-
-      let filteredEdges = [...filteredNetwork.elements.edges].filter(
-        (x) =>
-          x.data["target"] === getNodeID.data["id"] ||
-          x.data["id"] === getNodeID.data["id"]
-      );
-
-      filteredEdges.forEach((x) => findNodes.push(x.data["source"]));
-      let filteredNodes = [...filteredNetwork.elements.nodes].filter(
-        (x) =>
-          findNodes.includes(x.data["id"]) ||
-          x.data["id"] === getNodeID.data["id"]
-      );
-
-      filteredNetwork.elements.nodes = filteredNodes;
-      filteredNetwork.elements.edges = filteredEdges;
-    }
-    setNetworkData(filteredNetwork);
-    setLoading(false);
-  }
-
-  useEffect(() => {
-    filterODS();
-  }, [selectedODS]);
-
-  useEffect(() => {
-    console.log("selected year", selectedYear);
-    filterODS();
-  }, [selectedYear]);
-
-  useEffect(() => {
-    console.log("network updated", selectedNetworkData);
-  }, [selectedNetworkData]);
-
-  function cytosGraph(network) {
-    return (
-      <CytoscapeComponent
-        cy={(cy) => {
-          cy = cy.center();
-        }}
-        elements={CytoscapeComponent.normalizeElements({
-          nodes: network.elements.nodes,
-          edges: network.elements.edges,
-        })}
-        stylesheet={graphStyle.style}
-        layout={layout}
-        style={{ width: "100%", height: "1000px" }}
-      />
-    );
-  }
-
   return (
     <>
       <div className="content">
@@ -163,54 +12,204 @@ function Reto3() {
             <Card>
               <CardHeader className="mb-5">
                 {/* <h5 className="card-category">Black Table Heading</h5> */}
-                <CardTitle tag="h2"></CardTitle>
+                <CardTitle tag="h3">
+                  Rally de Datos: Explorando Datos para el Desarrollo Sostenible
+                </CardTitle>
               </CardHeader>
               <CardBody>
-                <h1>En Construcción...</h1>
+
+              <>
+                  <p className="title" style={{textAlign: 'justify'}}>Los Objetivos de Desarrollo Sostenible como una red de programas presupuestarios para la vigilancia ciudadana del presupuesto</p>
+                  <p>&nbsp;</p>
+                  <p><span>Nuestra propuesta de política pública es establecer un </span><span style={{fontWeight: 700}}>Observatorio Ciudadano del destino presupuestal enfocado al cumplimiento de los ODS</span>&nbsp;que permita dar seguimiento y asistir en la toma de decisiones. </p>
+                  <p>Para este fin proporcionamos datos curados y visualización de la relación entre los ODS y los PPs. </p>
+                  <p>Hasta el momento proporcionamos:</p>
+                  <ul><li>Una base de datos con información curada del 2018 al 2021 de:</li>
+                  <ul><li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible</li>
+                    <li>Presupuesto de Egresos de la Federación</li>
+                  </ul>
+                  </ul>
+
+                  <ul><li>Modelos de redes para cada año presupuestal (4) (formato JSON)</li>
+                  <ul><li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible (Vinculación)</li>
+                    <li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible con presupuesto asignado (PEF)</li>
+                    <li>Programas Presupuestarios compartidos entre años con presupuesto asignado (Core)</li>
+                    <li>Programas Presupuestarios no incluidos en el Core (Accesorios)</li>
+                  </ul>
+                  </ul>
+
+                  <ul><li>Cálculo de métricas locales y globales embebidos en las redes</li>
+                    <li>Un módulo de Python (en proceso de documentación) para limpieza de datos y replicar el análisis de las bases de datos así como el manejo de las redes proporcionadas</li>
+                    <li>Visualización de las redes en el sitio para observar la relación de PPs y ODS de interés</li>
+                  </ul>
+                </>
                 <p>
-                  Este sitio ha sido creado para proveer los datos recopilados y
-                  calculados por el equipo <b>DataOpossum</b> para el{" "}
-                  <a href="https://www.transparenciapresupuestaria.gob.mx/es/PTP/Convocatoria_rally_2021">
-                    Rally de Datos: Explorando Datos para el Desarrollo
-                    Sostenible
+                  Con el objetivo de promover el uso de los datos abiertos,
+                  <a href="https://www.gob.mx/hacienda" target="_blank" rel="noreferrer">
+                    {" "}
+                    La Secretaría de Hacienda y Crédito Público{" "}
+                  </a>
+                  con su portal de
+                  <a href="https://www.transparenciapresupuestaria.gob.mx/" target="_blank" rel="noreferrer">
+                    {" "}
+                    Transparencia Presupuestaria{" "}
+                  </a>
+                  y el
+                  <a href="https://ciep.mx/" target="_blank" rel="noreferrer">
+                    {" "}
+                    Centro de Investigación Económica y Presupuestaria, A.C.{" "}
+                  </a>
+                  , convocaron a la sexta edición del Rally de Datos: Explorando
+                  datos para el Desarrollo Sostenible, en el marco del{" "}
+                  <a href="https://opendataday.org/es_es/" target="_blank" rel="noreferrer">
+                    Día de los Datos Abiertos
                   </a>
                 </p>
-                <div>
-                  Seleccionar Año:{" "}
-                  <select
-                    value={selectedYear}
-                    disabled={loading}
-                    onChange={(e) => setYear(Number(e.currentTarget.value))}
-                  >
-                    {yearsList.map(({ label, value }) => (
-                      <option key={value} value={value}>
-                        {label}
-                      </option>
-                    ))}
-                  </select>{" "}
-                  Seleccionar ODS:{" "}
-                  <select
-                    disabled={loading}
-                    onChange={(e) => setODSValue(Number(e.currentTarget.value))}
-                  >
-                    {items.map(({ label, value }) => (
-                      <option key={value} value={value}>
-                        {label}
-                      </option>
-                    ))}
-                  </select>{" "}
+
+                <p>
+                  El rally se divide en 3 retos y podrás acceder a nuestros
+                  resultados correspondientes en el menú lateral del sitio
+                </p>
+                <hr />
+                <div
+                  className="row"
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/2.1jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/2.2.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/2.3.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/2.4.jpg").default}
+                    />
+                  </div>
+                </div>
+                <div
+                  className="row"
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.1.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.2.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.3.jpg").default}
+                    />
+                  </div>
                 </div>
 
                 <div
+                  className="row"
                   style={{
-                    backgroundColor: "#fff",
-                    marginTop: 10,
-                    borderRadius: 30,
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
                   }}
                 >
-                  {selectedNetworkData != null
-                    ? cytosGraph(selectedNetworkData)
-                    : null}
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.4.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.5.jpg").default}
+                    />
+                  </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.6.jpg").default}
+                    />
+                  </div>
+                </div>
+
+
+
+
+
+                <div
+                  className="row"
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <div className="col-sm-4">
+                    <img
+                      alt="..."
+                      className="squaredImg"
+                      src={require("assets/img/logo-transparencia.png").default}
+                    />
+                    <hr />
+                  </div>
+                  <div className="col-sm-4">
+                    <img
+                      alt="..."
+                      className="squaredImg"
+                      src={require("assets/img/logo-ods.png").default}
+                    />
+                    <hr />
+                  </div>
+                  <div className="col-sm-4">
+                    <img
+                      alt="..."
+                      className="squaredImg"
+                      src={require("assets/img/logo-hacienda.png").default}
+                    />
+                    <hr />
+                  </div>
                 </div>
               </CardBody>
             </Card>
