@@ -181,3 +181,8 @@
   border-right: 5px solid transparent;
   border-left: 5px solid transparent;
 }
+
+
+.poninterImg {
+  cursor: pointer;
+}

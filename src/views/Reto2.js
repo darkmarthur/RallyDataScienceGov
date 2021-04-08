@@ -1,4 +1,5 @@
 import React from "react";
+import { SRLWrapper } from "simple-react-lightbox";
 
 // reactstrap components
 import { Card, CardBody, Row, Col } from "reactstrap";
@@ -105,124 +106,124 @@ function Reto2() {
                   </a>{" "}
                   por parte de Las Naciones Unidas.
                 </p>
-
-                <div
-                  className="row"
-                  style={{
-                    textAlign: "center",
-                    display: "flex",
-                    alignItems: "center",
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/1-1.jpg").default}
-                    />
+                <SRLWrapper>
+                  <div
+                    className="row"
+                    style={{
+                      textAlign: "center",
+                      display: "flex",
+                      alignItems: "center",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/1-1.jpg").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/1-2.jpg").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/1-3.jpg").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/1-4.jpg").default}
+                      />
+                    </div>
                   </div>
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/1-2.jpg").default}
-                    />
+                  <hr />
+                  <div
+                    className="row"
+                    style={{
+                      textAlign: "center",
+                      display: "flex",
+                      alignItems: "center",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/2-1.jpg").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/2-2.jpg").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/2-3.jpg").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/2-4.jpg").default}
+                      />
+                    </div>
                   </div>
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/1-3.jpg").default}
-                    />
+                  <hr />
+                  <div
+                    className="row"
+                    style={{
+                      textAlign: "center",
+                      display: "flex",
+                      alignItems: "center",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/3-1.png").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/3-2.png").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/3-3.png").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/posts/3-4.png").default}
+                      />
+                    </div>
                   </div>
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/1-4.jpg").default}
-                    />
-                  </div>
-                </div>
-                <hr />
-
-                <div
-                  className="row"
-                  style={{
-                    textAlign: "center",
-                    display: "flex",
-                    alignItems: "center",
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/2-1.jpg").default}
-                    />
-                  </div>
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/2-2.jpg").default}
-                    />
-                  </div>
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/2-3.jpg").default}
-                    />
-                  </div>
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/2-4.jpg").default}
-                    />
-                  </div>
-                </div>
-                <hr />
-                <div
-                  className="row"
-                  style={{
-                    textAlign: "center",
-                    display: "flex",
-                    alignItems: "center",
-                    flexWrap: "wrap",
-                  }}
-                >
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/3-1.png").default}
-                    />
-                  </div>
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/3-2.png").default}
-                    />
-                  </div>
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/3-3.png").default}
-                    />
-                  </div>
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/3-4.png").default}
-                    />
-                  </div>
-                </div>
+                </SRLWrapper>
                 <hr />
                 <hr />
                 <iframe
@@ -230,7 +231,11 @@ function Reto2() {
                   src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158660692545804&width=500&show_text=true&appId=1485452328231316&height=666"
                   width={500}
                   height={666}
-                  style={{ border: "none", overflow: "hidden", backgroundColor: "#fff" }}
+                  style={{
+                    border: "none",
+                    overflow: "hidden",
+                    backgroundColor: "#fff",
+                  }}
                   scrolling="no"
                   frameBorder={0}
                   allowFullScreen={true}
