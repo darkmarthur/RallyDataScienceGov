@@ -52,7 +52,7 @@ var routes = [
   },
   {
     path: "/explora",
-    name: "Explora ODS y Programas Presupuestales",
+    name: "Explora ODS y PPS",
     rtlName: "لوحة القيادة",
     icon: "tim-icons icon-coins",
     component: ExploraODS,
@@ -66,14 +66,6 @@ var routes = [
     component: Blog,
     layout: "/admin",
   },  
-  {
-    path: "/equipo",
-    name: "Equipo",
-    rtlName: "لوحة القيادة",
-    icon: "tim-icons icon-badge",
-    component: Equipo,
-    layout: "/admin",
-  },
   {
     path: "/equipo",
     name: "Equipo",
