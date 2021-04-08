@@ -57,11 +57,13 @@ function ExploraODS() {
   const CACHE_CORE2020 = JSON.parse(JSON.stringify(CORE2020));
   const CACHE_CORE2019 = JSON.parse(JSON.stringify(CORE2019));
   const CACHE_CORE2018 = JSON.parse(JSON.stringify(CORE2018));
-  
+
   const CACHE_ACCESORY2021 = JSON.parse(JSON.stringify(ACCESORY2021));
   const CACHE_ACCESORY2020 = JSON.parse(JSON.stringify(ACCESORY2020));
   const CACHE_ACCESORY2019 = JSON.parse(JSON.stringify(ACCESORY2019));
   const CACHE_ACCESORY2018 = JSON.parse(JSON.stringify(ACCESORY2018));
+
+  const [listODS, setODS] = useState([]);
 
   const [selectedNetworkData, setNetworkData] = useState({
     DATA: JSON.parse(JSON.stringify(CACHE_VINC2021)),
@@ -69,7 +71,7 @@ function ExploraODS() {
 
   const [selectedODS, setODSValue] = useState(0);
   const [selectedYear, setYear] = useState(2021);
-  const [selectedType, setType] = useState(0);
+  const [selectedType, setType] = useState("VINC");
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([
     { label: "Todos", value: 0 },
@@ -96,61 +98,70 @@ function ExploraODS() {
     {
       label: "2018",
       value: 2018,
+      CACHE_VINC: CACHE_VINC2018,
+      CACHE_PEF: CACHE_PEF2018,
+      CACHE_CORE: CACHE_CORE2018,
+      CACHE_ACCESORY: CACHE_ACCESORY2018,
     },
     {
       label: "2019",
       value: 2019,
+      CACHE_VINC: CACHE_VINC2019,
+      CACHE_PEF: CACHE_PEF2019,
+      CACHE_CORE: CACHE_CORE2019,
+      CACHE_ACCESORY: CACHE_ACCESORY2019,
     },
     {
       label: "2020",
       value: 2020,
+      CACHE_VINC: CACHE_VINC2020,
+      CACHE_PEF: CACHE_PEF2020,
+      CACHE_CORE: CACHE_CORE2020,
+      CACHE_ACCESORY: CACHE_ACCESORY2020,
     },
     {
       label: "2021",
       value: 2021,
+      CACHE_VINC: CACHE_VINC2021,
+      CACHE_PEF: CACHE_PEF2021,
+      CACHE_CORE: CACHE_CORE2021,
+      CACHE_ACCESORY: CACHE_ACCESORY2021,
     },
   ]);
 
   const [typeList, setTypes] = useState([
     {
       label: "Vinculacion",
-      value: 0,
+      value: "VINC",
     },
     {
       label: "PEF",
-      value: 1,
+      value: "PEF",
     },
     {
       label: "Core_PP",
-      value: 2,
+      value: "CORE",
     },
     {
       label: "Accessory_PP",
-      value: 3,
+      value: "ACCESORY",
     },
   ]);
 
- // const [listODS, setODS] = useState([
-  // ]);
-
   async function filterODS() {
     let filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2021)); // DEFAULT
-    switch (selectedYear) {
-      case 2021:
-        filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2021));
-        console.log("selectedYear", selectedYear);
+    switch (selectedType) {
+      case "VINC":
+        filteredNetwork = JSON.parse(JSON.stringify(yearsList.find(x => x.value === selectedYear).CACHE_VINC));
         break;
-      case 2020:
-        filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2020));
-        console.log("selectedYear", selectedYear);
+      case "PEF":
+        filteredNetwork = JSON.parse(JSON.stringify(yearsList.find(x => x.value === selectedYear).CACHE_PEF));
         break;
-      case 2019:
-        filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2019));
-        console.log("selectedYear", selectedYear);
+      case "CORE":
+        filteredNetwork = JSON.parse(JSON.stringify(yearsList.find(x => x.value === selectedYear).CACHE_CORE));
         break;
-      case 2018:
-        filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2018));
-        console.log("selectedYear", selectedYear);
+      case "ACCESORY":
+        filteredNetwork = JSON.parse(JSON.stringify(yearsList.find(x => x.value === selectedYear).CACHE_ACCESORY));
         break;
       default:
         break;
@@ -192,7 +203,7 @@ function ExploraODS() {
 
   useEffect(() => {
     console.log("selected type", selectedType);
-    
+    filterODS();
   }, [selectedType]);
 
   useEffect(() => {
@@ -245,11 +256,11 @@ function ExploraODS() {
                 <Row>
                   <Col md="4">
                     <b style={{ color: "#fff" }}>Seleccionar Tipo: </b>
-                    <div class="select-dropdown">
+                    <div className="select-dropdown">
                       <select
                         value={selectedType}
                         disabled={loading}
-                        onChange={(e) => setType(Number(e.currentTarget.value))}
+                        onChange={(e) => setType(e.currentTarget.value)}
                       >
                         {typeList.map(({ label, value }) => (
                           <option key={value} value={value}>
@@ -261,7 +272,7 @@ function ExploraODS() {
                   </Col>
                   <Col md="4">
                     <b style={{ color: "#fff" }}> Seleccionar Año: </b>
-                    <div class="select-dropdown">
+                    <div className="select-dropdown">
                       <select
                         value={selectedYear}
                         disabled={loading}
@@ -277,7 +288,7 @@ function ExploraODS() {
                   </Col>
                   <Col md="4">
                     <b style={{ color: "#fff" }}> Seleccionar ODS: </b>
-                    <div class="select-dropdown">
+                    <div className="select-dropdown">
                       <select
                         disabled={loading}
                         onChange={(e) =>
