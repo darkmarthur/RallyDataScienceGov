@@ -204,6 +204,13 @@ function Reto3() {
                       src={require("assets/img/posts/3.3.png").default}
                     />
                   </div>
+                  <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.4.png").default}
+                    />
+                  </div>
                 </div>
 
                 <div
@@ -215,13 +222,7 @@ function Reto3() {
                     flexWrap: "wrap",
                   }}
                 >
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/3.4.png").default}
-                    />
-                  </div>
+                  
                   {/* <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
