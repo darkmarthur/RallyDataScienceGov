@@ -17,40 +17,101 @@ function Reto3() {
                 </CardTitle>
               </CardHeader>
               <CardBody>
-
-              <>
-                  <p className="title" style={{textAlign: 'justify'}}>Los Objetivos de Desarrollo Sostenible como una red de programas presupuestarios para la vigilancia ciudadana del presupuesto</p>
+                <>
+                  <p className="title" style={{ textAlign: "justify" }}>
+                    Los Objetivos de Desarrollo Sostenible como una red de
+                    programas presupuestarios para la vigilancia ciudadana del
+                    presupuesto
+                  </p>
                   <p>&nbsp;</p>
-                  <p><span>Nuestra propuesta de política pública es establecer un </span><span style={{fontWeight: 700}}>Observatorio Ciudadano del destino presupuestal enfocado al cumplimiento de los ODS</span>&nbsp;que permita dar seguimiento y asistir en la toma de decisiones. </p>
-                  <p>Para este fin proporcionamos datos curados y visualización de la relación entre los ODS y los PPs. </p>
+                  <p>
+                    <span>
+                      Nuestra propuesta de política pública es establecer un{" "}
+                    </span>
+                    <span style={{ fontWeight: 700 }}>
+                      Observatorio Ciudadano del destino presupuestal enfocado
+                      al cumplimiento de los ODS
+                    </span>
+                    &nbsp;que permita dar seguimiento y asistir en la toma de
+                    decisiones.{" "}
+                  </p>
+                  <p>
+                    Para este fin proporcionamos datos curados y visualización
+                    de la relación entre los ODS y los PPs.{" "}
+                  </p>
                   <p>Hasta el momento proporcionamos:</p>
-                  <ul><li>Una base de datos con información curada del 2018 al 2021 de:</li>
-                  <ul><li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible</li>
-                    <li>Presupuesto de Egresos de la Federación</li>
-                  </ul>
+                  <ul>
+                    <li>
+                      Una base de datos con información curada del 2018 al 2021
+                      de:
+                    </li>
+                    <ul>
+                      <li>
+                        Vinculación de Programas Presupuestarios del PEF a los
+                        Objetivos de Desarrollo Sostenible
+                      </li>
+                      <li>Presupuesto de Egresos de la Federación</li>
+                    </ul>
                   </ul>
 
-                  <ul><li>Modelos de redes para cada año presupuestal (4) (formato JSON)</li>
-                  <ul><li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible (Vinculación)</li>
-                    <li>Vinculación de Programas Presupuestarios del PEF a los Objetivos de Desarrollo Sostenible con presupuesto asignado (PEF)</li>
-                    <li>Programas Presupuestarios compartidos entre años con presupuesto asignado (Core)</li>
-                    <li>Programas Presupuestarios no incluidos en el Core (Accesorios)</li>
-                  </ul>
+                  <ul>
+                    <li>
+                      Modelos de redes para cada año presupuestal (4) (formato
+                      JSON)
+                    </li>
+                    <ul>
+                      <li>
+                        Vinculación de Programas Presupuestarios del PEF a los
+                        Objetivos de Desarrollo Sostenible (Vinculación)
+                      </li>
+                      <li>
+                        Vinculación de Programas Presupuestarios del PEF a los
+                        Objetivos de Desarrollo Sostenible con presupuesto
+                        asignado (PEF)
+                      </li>
+                      <li>
+                        Programas Presupuestarios compartidos entre años con
+                        presupuesto asignado (Core)
+                      </li>
+                      <li>
+                        Programas Presupuestarios no incluidos en el Core
+                        (Accesorios)
+                      </li>
+                    </ul>
                   </ul>
 
-                  <ul><li>Cálculo de métricas locales y globales embebidos en las redes</li>
-                    <li>Un módulo de Python (en proceso de documentación) para limpieza de datos y replicar el análisis de las bases de datos así como el manejo de las redes proporcionadas</li>
-                    <li>Visualización de las redes en el sitio para observar la relación de PPs y ODS de interés</li>
+                  <ul>
+                    <li>
+                      Cálculo de métricas locales y globales embebidos en las
+                      redes
+                    </li>
+                    <li>
+                      Un módulo de Python (en proceso de documentación) para
+                      limpieza de datos y replicar el análisis de las bases de
+                      datos así como el manejo de las redes proporcionadas
+                    </li>
+                    <li>
+                      Visualización de las redes en el sitio para observar la
+                      relación de PPs y ODS de interés
+                    </li>
                   </ul>
                 </>
                 <p>
                   Con el objetivo de promover el uso de los datos abiertos,
-                  <a href="https://www.gob.mx/hacienda" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.gob.mx/hacienda"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {" "}
                     La Secretaría de Hacienda y Crédito Público{" "}
                   </a>
                   con su portal de
-                  <a href="https://www.transparenciapresupuestaria.gob.mx/" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.transparenciapresupuestaria.gob.mx/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {" "}
                     Transparencia Presupuestaria{" "}
                   </a>
@@ -61,7 +122,11 @@ function Reto3() {
                   </a>
                   , convocaron a la sexta edición del Rally de Datos: Explorando
                   datos para el Desarrollo Sostenible, en el marco del{" "}
-                  <a href="https://opendataday.org/es_es/" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://opendataday.org/es_es/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Día de los Datos Abiertos
                   </a>
                 </p>
@@ -84,28 +149,28 @@ function Reto3() {
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/2.1jpg").default}
+                      src={require("assets/img/posts/2.1.png").default}
                     />
                   </div>
                   <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/2.2.jpg").default}
+                      src={require("assets/img/posts/2.2.png").default}
                     />
                   </div>
                   <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/2.3.jpg").default}
+                      src={require("assets/img/posts/2.3.png").default}
                     />
                   </div>
                   <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/2.4.jpg").default}
+                      src={require("assets/img/posts/2.4.png").default}
                     />
                   </div>
                 </div>
@@ -122,21 +187,21 @@ function Reto3() {
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/3.1.jpg").default}
+                      src={require("assets/img/posts/3.1.png").default}
                     />
                   </div>
                   <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/3.2.jpg").default}
+                      src={require("assets/img/posts/3.2.png").default}
                     />
                   </div>
                   <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/3.3.jpg").default}
+                      src={require("assets/img/posts/3.3.png").default}
                     />
                   </div>
                 </div>
@@ -154,28 +219,24 @@ function Reto3() {
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/3.4.jpg").default}
+                      src={require("assets/img/posts/3.4.png").default}
+                    />
+                  </div>
+                  {/* <div className="col-sm-1 col-md-6 col-lg-3">
+                    <img
+                      alt="..."
+                      className=""
+                      src={require("assets/img/posts/3.5.png").default}
                     />
                   </div>
                   <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/3.5.jpg").default}
+                      src={require("assets/img/posts/3.6.png").default}
                     />
-                  </div>
-                  <div className="col-sm-1 col-md-6 col-lg-3">
-                    <img
-                      alt="..."
-                      className=""
-                      src={require("assets/img/posts/3.6.jpg").default}
-                    />
-                  </div>
+                  </div> */}
                 </div>
-
-
-
-
 
                 <div
                   className="row"

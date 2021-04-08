@@ -17,8 +17,7 @@ function Blog() {
                 </CardTitle>
               </CardHeader>
               <CardBody>
-
-              <div
+                <div
                   className="row"
                   style={{
                     textAlign: "center",
@@ -31,21 +30,21 @@ function Blog() {
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/1.1jpg").default}
+                      src={require("assets/img/posts/1.1.png").default}
                     />
                   </div>
                   <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/1.2.jpg").default}
+                      src={require("assets/img/posts/1.2.png").default}
                     />
                   </div>
                   <div className="col-sm-1 col-md-6 col-lg-3">
                     <img
                       alt="..."
                       className=""
-                      src={require("assets/img/posts/1.3.jpg").default}
+                      src={require("assets/img/posts/1.3.png").default}
                     />
                   </div>
                   {/*<div className="col-sm-1 col-md-6 col-lg-3">
@@ -56,25 +55,36 @@ function Blog() {
                     />
                   </div>*/}
                 </div>
-              
-                
+
                 <h1>Convocatoria</h1>
                 <p>
                   Este sitio ha sido creado para proveer los datos recopilados y
                   calculados por el equipo <b>DataOpossum</b> para el{" "}
-                  <a href="https://www.transparenciapresupuestaria.gob.mx/es/PTP/Convocatoria_rally_2021" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.transparenciapresupuestaria.gob.mx/es/PTP/Convocatoria_rally_2021"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Rally de Datos: Explorando Datos para el Desarrollo
                     Sostenible
                   </a>
                 </p>
                 <p>
                   Con el objetivo de promover el uso de los datos abiertos,
-                  <a href="https://www.gob.mx/hacienda" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.gob.mx/hacienda"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {" "}
                     La Secretaría de Hacienda y Crédito Público{" "}
                   </a>
                   con su portal de
-                  <a href="https://www.transparenciapresupuestaria.gob.mx/" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://www.transparenciapresupuestaria.gob.mx/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     {" "}
                     Transparencia Presupuestaria{" "}
                   </a>
@@ -85,7 +95,11 @@ function Blog() {
                   </a>
                   , convocaron a la sexta edición del Rally de Datos: Explorando
                   datos para el Desarrollo Sostenible, en el marco del{" "}
-                  <a href="https://opendataday.org/es_es/" target="_blank" rel="noreferrer">
+                  <a
+                    href="https://opendataday.org/es_es/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Día de los Datos Abiertos
                   </a>
                 </p>
