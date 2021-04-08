@@ -2,12 +2,27 @@ import React, { useEffect, useState } from "react";
 // import ReactDOM from "react-dom";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
-import networkDataFile2021 from "../data/2021_Dcontribution_inPEF.json";
-import networkDataFile2020 from "../data/2021_Dcontribution_inPEF.json";
-import networkDataFile2019 from "../data/2021_Dcontribution_inPEF.json";
-import networkDataFile2018 from "../data/2021_Dcontribution_inPEF.json";
+import VINC2021 from "../data/2021_PP_inVinc.json";
+import VINC2020 from "../data/2020_PP_inVinc.json";
+import VINC2019 from "../data/2019_PP_inVinc.json";
+import VINC2018 from "../data/2018_PP_inVinc.json";
 
-import graphStyle from "../data/ODS_style.json";
+import PEF2021 from "../data/2021_PP_inPEF.json";
+import PEF2020 from "../data/2020_PP_inPEF.json";
+import PEF2019 from "../data/2019_PP_inPEF.json";
+import PEF2018 from "../data/2018_PP_inPEF.json";
+
+import CORE2021 from "../data/2021_Core_PP.json";
+import CORE2020 from "../data/2020_Core_PP.json";
+import CORE2019 from "../data/2019_Core_PP.json";
+import CORE2018 from "../data/2018_Core_PP.json";
+
+import ACCESORY2021 from "../data/2021_Accessory_PP.json";
+import ACCESORY2020 from "../data/2020_Accessory_PP.json";
+import ACCESORY2019 from "../data/2019_Accessory_PP.json";
+import ACCESORY2018 from "../data/2018_Accessory_PP.json";
+
+import graphStyle from "../data/ODS_style/ODS_style.json";
 
 // import ODS_1 from '../data/ODS_images/1.jpg'
 // import Plot from "react-plotly.js";
@@ -28,13 +43,28 @@ function ExploraODS() {
     padding: 10,
   };
 
-  const data2018 = JSON.parse(JSON.stringify(networkDataFile2018));
-  const data2019 = JSON.parse(JSON.stringify(networkDataFile2019));
-  const data2020 = JSON.parse(JSON.stringify(networkDataFile2020));
-  const data2021 = JSON.parse(JSON.stringify(networkDataFile2021));
+  const CACHE_VINC2018 = JSON.parse(JSON.stringify(VINC2018));
+  const CACHE_VINC2019 = JSON.parse(JSON.stringify(VINC2019));
+  const CACHE_VINC2020 = JSON.parse(JSON.stringify(VINC2020));
+  const CACHE_VINC2021 = JSON.parse(JSON.stringify(VINC2021));
+
+  const CACHE_PEF2021 = JSON.parse(JSON.stringify(PEF2021));
+  const CACHE_PEF2020 = JSON.parse(JSON.stringify(PEF2020));
+  const CACHE_PEF2019 = JSON.parse(JSON.stringify(PEF2019));
+  const CACHE_PEF2018 = JSON.parse(JSON.stringify(PEF2018));
+
+  const CACHE_CORE2021 = JSON.parse(JSON.stringify(CORE2021));
+  const CACHE_CORE2020 = JSON.parse(JSON.stringify(CORE2020));
+  const CACHE_CORE2019 = JSON.parse(JSON.stringify(CORE2019));
+  const CACHE_CORE2018 = JSON.parse(JSON.stringify(CORE2018));
+  
+  const CACHE_ACCESORY2021 = JSON.parse(JSON.stringify(ACCESORY2021));
+  const CACHE_ACCESORY2020 = JSON.parse(JSON.stringify(ACCESORY2020));
+  const CACHE_ACCESORY2019 = JSON.parse(JSON.stringify(ACCESORY2019));
+  const CACHE_ACCESORY2018 = JSON.parse(JSON.stringify(ACCESORY2018));
 
   const [selectedNetworkData, setNetworkData] = useState({
-    DATA: JSON.parse(JSON.stringify(data2021)),
+    DATA: JSON.parse(JSON.stringify(CACHE_VINC2021)),
   });
 
   const [selectedODS, setODSValue] = useState(0);
@@ -100,31 +130,26 @@ function ExploraODS() {
     },
   ]);
 
-
-  const [listODS, setODS] = useState([
-
-  ]);
-
-
-
+ // const [listODS, setODS] = useState([
+  // ]);
 
   async function filterODS() {
-    let filteredNetwork = JSON.parse(JSON.stringify(data2021));
+    let filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2021)); // DEFAULT
     switch (selectedYear) {
       case 2021:
-        filteredNetwork = JSON.parse(JSON.stringify(data2021));
+        filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2021));
         console.log("selectedYear", selectedYear);
         break;
       case 2020:
-        filteredNetwork = JSON.parse(JSON.stringify(data2020));
+        filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2020));
         console.log("selectedYear", selectedYear);
         break;
       case 2019:
-        filteredNetwork = JSON.parse(JSON.stringify(data2019));
+        filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2019));
         console.log("selectedYear", selectedYear);
         break;
       case 2018:
-        filteredNetwork = JSON.parse(JSON.stringify(data2018));
+        filteredNetwork = JSON.parse(JSON.stringify(CACHE_VINC2018));
         console.log("selectedYear", selectedYear);
         break;
       default:
@@ -167,7 +192,7 @@ function ExploraODS() {
 
   useEffect(() => {
     console.log("selected type", selectedType);
-    filterODS();
+    
   }, [selectedType]);
 
   useEffect(() => {
