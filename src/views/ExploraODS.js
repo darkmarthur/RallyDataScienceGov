@@ -300,6 +300,7 @@ function ExploraODS() {
                 <CardTitle tag="h2"></CardTitle>
               </CardHeader>
               <CardBody>
+              <h1>Observatorio de Programas Presupuestarios enfocados al cumplimiento de los ODS</h1>
                 <p>
                   Este sitio ha sido creado para proveer los datos recopilados y
                   calculados por el equipo <b>DataOpossum</b> para el{" "}

@@ -19,11 +19,11 @@ function Reto2() {
               <CardBody>
                 <h1>Problemática alrededor del cumplimiento de los ODS</h1>
                 <h2>Acciones del PEF 2021 - Agenda 2030</h2>
-                <p>
+                <p className="title" style={{ textAlign: "justify" }}>
                   Cumplimiento de los objetivos de la Agenda 2030 en materia de
                   Biodiversidad y Acciones por el Clima
                 </p>
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   En DataOpossum identificamos que una de las problemáticas para
                   el cumplimiento de los Objetivos de Desarrollo Sostenible
                   (ODS) es el posible conflicto entre metas para cumplir con
@@ -41,7 +41,7 @@ function Reto2() {
                   la complejidad de las metas a alcanzar.
                 </p>
 
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Ha pasado un año desde que el presidente de Francia, Emmanuel
                   Macron calificó los esfuerzos para mantener la biodiversidad y
                   frenar el cambio climático como “la batalla del siglo”. Nos
@@ -62,7 +62,7 @@ function Reto2() {
                   esto perpetua la externalización de los costos sociales y
                   ambientales (Surasky, 2017).
                 </p>
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   También existe tensión entre objetivos, el desarrollo (i.e.
                   Crecimiento industrial) y el ambiente (i.e. Preservación de
                   especies y ecosistemas) representan un caso. Generalmente en
@@ -76,7 +76,7 @@ function Reto2() {
                   los beneficios que aportan a la población los servicios
                   ecosistémicos de estos lugares.
                 </p>
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   La disparidad presente con la exigencia en metas a naciones
                   pobres con respecto al cumplimiento de estándares ambientales
                   como las de las naciones más ricas da una percepción de
@@ -94,18 +94,7 @@ function Reto2() {
                 </p>
                 <hr />
 
-                <h3>Fuentes</h3>
-                <p>
-                  Descarga aquí{" "}
-                  <a
-                    href="https://www.un.org/sustainabledevelopment/es/wp-content/uploads/sites/3/2019/04/17-00011_LazyPersonGuide_flyer_Spanish_final.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    La Guía de los vagos para salvar el mundo
-                  </a>{" "}
-                  por parte de Las Naciones Unidas.
-                </p>
+                
                 <SRLWrapper>
                   <div
                     className="row"
@@ -225,22 +214,20 @@ function Reto2() {
                   </div>
                 </SRLWrapper>
                 <hr />
+                <h3>Fuentes</h3>
+                <p>
+                  Descarga aquí{" "}
+                  <a
+                    href="https://www.un.org/sustainabledevelopment/es/wp-content/uploads/sites/3/2019/04/17-00011_LazyPersonGuide_flyer_Spanish_final.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    La Guía de los vagos para salvar el mundo
+                  </a>{" "}
+                  por parte de Las Naciones Unidas.
+                </p>
+                
                 <hr />
-                <iframe
-                  title="Facebook Post"
-                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158660692545804&width=500&show_text=true&appId=1485452328231316&height=666"
-                  width={500}
-                  height={666}
-                  style={{
-                    border: "none",
-                    overflow: "hidden",
-                    backgroundColor: "#fff",
-                  }}
-                  scrolling="no"
-                  frameBorder={0}
-                  allowFullScreen={true}
-                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                />
               </CardBody>
             </Card>
           </Col>

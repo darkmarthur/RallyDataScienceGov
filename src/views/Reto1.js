@@ -23,7 +23,7 @@ function Reto1() {
                   de la Agenda 2030 en materia de Biodiversidad y Acciones por
                   el Clima
                 </p>
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   En el 2016 en México entró en vigor la Agenda 2030 para el
                   Desarrollo Sostenible. Compuesto por 17 Objetivos de
                   Desarrollo Sostenible (ODS), el documento titulado
@@ -36,7 +36,7 @@ function Reto1() {
                   para la humanidad.
                 </p>
 
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   El Presupuesto de Egresos de la Federación (PEF) 2021 es
                   elaborado por medio de la Secretaría de Hacienda y Crédito
                   Público y establece la cantidad, la forma de distribución y el
@@ -54,7 +54,7 @@ function Reto1() {
                   src={require("assets/img/graph1.png").default}
                 />
                 <hr />
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Dentro de la temática de Biodiversidad y Acciones por el clima
                   el PEF 2021 aprobó al ramo de Medio Ambiente y Recursos
                   Naturales (R-16) un presupuesto total de $2,148,543,796 MN
@@ -72,7 +72,7 @@ function Reto1() {
                 />
 
                 <hr />
-                <p>
+                <p style={{ textAlign: "justify" }}>
                   Los ODS a través de sus 17 objetivos proponen 169 metas a
                   cumplir para el 2030. La temática de Biodiversidad y Acciones
                   por el clima, con 111 Programas Presupuestarios puntualiza 232

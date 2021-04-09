@@ -14,15 +14,17 @@ function Reto3() {
               <CardHeader className="mb-5">
                 {/* <h5 className="card-category">Black Table Heading</h5> */}
                 <CardTitle tag="h3">
-                  Rally de Datos: Explorando Datos para el Desarrollo Sostenible
+                  
                 </CardTitle>
               </CardHeader>
               <CardBody>
-                <>
-                  <p className="title" style={{ textAlign: "justify" }}>
-                    Los Objetivos de Desarrollo Sostenible como una red de
+              <>
+              <h1>Los Objetivos de Desarrollo Sostenible como una red de
                     programas presupuestarios para la vigilancia ciudadana del
-                    presupuesto
+                    presupuesto</h1>
+                
+                  <p className="title" style={{ textAlign: "justify" }}>
+                  Rally de Datos: Explorando Datos para el Desarrollo Sostenible
                   </p>
                   <p>&nbsp;</p>
                   <p>
@@ -97,45 +99,7 @@ function Reto3() {
                     </li>
                   </ul>
                 </>
-                <p>
-                  Con el objetivo de promover el uso de los datos abiertos,
-                  <a
-                    href="https://www.gob.mx/hacienda"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {" "}
-                    La Secretaría de Hacienda y Crédito Público{" "}
-                  </a>
-                  con su portal de
-                  <a
-                    href="https://www.transparenciapresupuestaria.gob.mx/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {" "}
-                    Transparencia Presupuestaria{" "}
-                  </a>
-                  y el
-                  <a href="https://ciep.mx/" target="_blank" rel="noreferrer">
-                    {" "}
-                    Centro de Investigación Económica y Presupuestaria, A.C.{" "}
-                  </a>
-                  , convocaron a la sexta edición del Rally de Datos: Explorando
-                  datos para el Desarrollo Sostenible, en el marco del{" "}
-                  <a
-                    href="https://opendataday.org/es_es/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Día de los Datos Abiertos
-                  </a>
-                </p>
 
-                <p>
-                  El rally se divide en 3 retos y podrás acceder a nuestros
-                  resultados correspondientes en el menú lateral del sitio
-                </p>
                 <hr />
                 <SRLWrapper>
                   <div
@@ -216,7 +180,67 @@ function Reto3() {
                     </div>
                   </div>
                 </SRLWrapper>
+                <hr />
+                <h3>Fuentes</h3>
+                <p>
+                <ul>
+                    <li>
+                      
+                    </li>
+                    <li>
+                      
+                    </li>
+                    <li>
+                      
+                    </li>
+                  </ul>
+                </p>
+                <h3>Material Adicional</h3>
 
+
+
+
+
+                <hr />
+                <p>
+                  Con el objetivo de promover el uso de los datos abiertos,
+                  <a
+                    href="https://www.gob.mx/hacienda"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {" "}
+                    La Secretaría de Hacienda y Crédito Público{" "}
+                  </a>
+                  con su portal de
+                  <a
+                    href="https://www.transparenciapresupuestaria.gob.mx/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {" "}
+                    Transparencia Presupuestaria{" "}
+                  </a>
+                  y el
+                  <a href="https://ciep.mx/" target="_blank" rel="noreferrer">
+                    {" "}
+                    Centro de Investigación Económica y Presupuestaria, A.C.{" "}
+                  </a>
+                  , convocaron a la sexta edición del Rally de Datos: Explorando
+                  datos para el Desarrollo Sostenible, en el marco del{" "}
+                  <a
+                    href="https://opendataday.org/es_es/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Día de los Datos Abiertos
+                  </a>
+                </p>
+
+                <p>
+                  El rally se divide en 3 retos y podrás acceder a nuestros
+                  resultados correspondientes en el menú lateral del sitio
+                </p>
                 <div
                   className="row"
                   style={{
