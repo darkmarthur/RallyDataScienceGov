@@ -240,6 +240,7 @@ function ExploraODS() {
         );
         break;
       default:
+        cytosGraph(filteredNetwork.DATA);
         break;
     }
 
