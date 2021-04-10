@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-// import ReactDOM from "react-dom";
+import React, { useEffect, useState, useRef } from "react";
+import ReactDOM from "react-dom";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
 import VINC2021 from "../data/2021_PP_inVinc.json";
@@ -27,11 +27,27 @@ import graphStyle from "../data/ODS_style/ODS_style.json";
 // import ODS_1 from '../data/ODS_images/1.jpg'
 // import Plot from "react-plotly.js";
 import Cytoscape from "cytoscape";
+import popper from 'cytoscape-popper';
 // import BubbleSets from 'cytoscape-bubblesets';
 // import COSEBilkent from "cytoscape-cose-bilkent";
 // import cola from "cytoscape-cola";
 import CytoscapeComponent from "react-cytoscapejs";
 import edgehandles from "cytoscape-edgehandles";
+
+import { Button } from 'semantic-ui-react';
+
+Cytoscape.use(popper);
+
+const ReactButton = () => {
+  return <Button type="button">React Button</Button>;
+};
+
+const createContentFromComponent = (component) => {
+  const dummyDomEle = document.createElement('div');
+  ReactDOM.render(component, dummyDomEle);
+  document.body.appendChild(dummyDomEle);
+  return dummyDomEle;
+};
 
 Cytoscape.use(edgehandles);
 
@@ -262,10 +278,77 @@ function ExploraODS() {
   }
 
   function cytosGraph(network) {
+
+    const cyRef = useRef(null);
+    const cyPopperRef = useRef(null);
+  
+    useEffect(() => {
+      const cy = cyRef.current;
+  
+      cy.nodes().on('mouseover', (event) => {
+
+        cyPopperRef.current = event.target.popper({
+          content: () => {
+
+            let div = document.createElement('div');
+            // adding id for easier JavaScript control
+            div.id = tooltipId;
+
+            // adding class for easier CSS control
+            div.classList.add('target-popper');
+
+            let table = document.createElement('table');
+            div.append(table);
+            let targetData = event.target.data();
+            const propiedades = ["EdgeCount", "Monto", "PP_por_Monto", "Redundancy", "LatapyClustering", "Aplicabilidad"]
+            for (let prop in targetData) {
+              if (!targetData.hasOwnProperty(prop)) continue;
+    
+              let targetValue = targetData[prop];
+              // no recursive or reduce support
+              if (!propiedades.includes(prop)) continue;
+              if (typeof targetValue === "object") continue;
+    
+              let tr = table.insertRow();
+    
+              let tdTitle = tr.insertCell();
+              let tdValue = tr.insertCell();
+    
+              tdTitle.innerText = prop;
+              tdValue.innerText = targetValue;
+            }
+        
+            //div.innerHTML = "<br><b>&nbsp;Name: "+event.target.data("name")+"</b></br>" + 
+            //"<br><b>&nbsp;Name: "+event.target.data("name")+"</b></br>";
+        
+            document.body.appendChild(div);
+        
+            return div;
+          },//createContentFromComponent("<b>"+ele.id()+"</b>"), // (<ReactButton />),<Button type="button">"<b>"+ele.id()+"</b>"</Button>
+          popper: {
+            placement: 'right',
+            removeOnDestroy: true,
+          },
+        });
+      });
+  
+      cy.nodes().on('mouseout', () => {
+        if (cyPopperRef) {
+          cyPopperRef.current.destroy();
+        }
+      });
+    }, []);
+  
+    //const elements = {
+    //  ...
+    //};
+
+
     return (
       <CytoscapeComponent
         cy={(cy) => {
-          cy = cy.center();
+          //this.cy = cy
+          cy.center();
           cy.$("node").on("grab", function (e) {
             var ele = e.target;
             ele.connectedEdges().style({ "line-color": "red" });
@@ -275,6 +358,7 @@ function ExploraODS() {
             var ele = e.target;
             ele.connectedEdges().style({ "line-color": "#red" });
           });
+          cyRef.current = cy;
         }}
         elements={CytoscapeComponent.normalizeElements({
           nodes: network.elements.nodes,
@@ -283,6 +367,7 @@ function ExploraODS() {
         stylesheet={graphStyle.style}
         layout={selectedLayoutData}
         style={{ width: "100%", height: "1000px" }}
+        X
       />
     );
   }
