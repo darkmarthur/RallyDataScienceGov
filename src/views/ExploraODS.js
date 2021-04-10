@@ -292,7 +292,7 @@ function ExploraODS() {
 
             let div = document.createElement('div');
             // adding id for easier JavaScript control
-            div.id = tooltipId;
+            //div.id = tooltipId;
 
             // adding class for easier CSS control
             div.classList.add('target-popper');
