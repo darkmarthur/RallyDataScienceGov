@@ -13,12 +13,11 @@ function Inicio() {
               <CardHeader className="mb-5">
                 {/* <h5 className="card-category">Black Table Heading</h5> */}
                 <CardTitle tag="h3">
-                  Rally de Datos: Explorando Datos para el Desarrollo Sostenible
+                  Observatorio Ciudadano del destino presupuestal enfocado al cumplimiento de los Objetivos del Desarrollo Sostenible
                 </CardTitle>
               </CardHeader>
               <CardBody>
-                <h1>Convocatoria</h1>
-                <p>
+              <p>
                   Este sitio ha sido creado para proveer los datos recopilados y
                   calculados por el equipo <b>DataOpossum</b> para el{" "}
                   <a href="https://www.transparenciapresupuestaria.gob.mx/es/PTP/Convocatoria_rally_2021" target="_blank" rel="noreferrer">
@@ -26,6 +25,42 @@ function Inicio() {
                     Sostenible
                   </a>
                 </p>
+              <p>
+                  El rally se divide en 3 retos y podrás acceder a nuestros
+                  resultados correspondientes en el menú lateral del sitio
+                </p>
+                <hr />
+                <h1>Publicaciones del reto 3</h1>
+                <div
+                  className="row"
+                  style={{
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    flexWrap: "wrap",
+                  }}
+                >
+                  <div className="col-sm-4">
+                  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158722643700804&width=500&show_text=true&appId=1485452328231316&height=748" width="500" height="748" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+                    <hr />
+                  </div>
+                  <div className="col-sm-4">
+                  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158722642245804&width=500&show_text=true&appId=1485452328231316&height=665" width="500" height="665" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+                    <hr />
+                  </div>
+                  <div className="col-sm-4">
+                  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158722641775804&width=500&show_text=true&appId=1485452328231316&height=735" width="500" height="735" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+
+                    <hr />
+                  </div>
+                </div>
+                
+                <hr />
+
+                <hr />
+                <h3>Convocatoria</h3>
                 <p>
                   Con el objetivo de promover el uso de los datos abiertos,
                   <a href="https://www.gob.mx/hacienda" target="_blank" rel="noreferrer">
@@ -48,13 +83,6 @@ function Inicio() {
                     Día de los Datos Abiertos
                   </a>
                 </p>
-
-                <p>
-                  El rally se divide en 3 retos y podrás acceder a nuestros
-                  resultados correspondientes en el menú lateral del sitio
-                </p>
-                <hr />
-
                 <div
                   className="row"
                   style={{

@@ -83,7 +83,7 @@ function Admin(props) {
         return routes[i].name;
       }
     }
-    return "Rally de Datos";
+    return "Observatorio Ciudadano";
   };
   return (
     <BackgroundColorContext.Consumer>
