@@ -35,23 +35,49 @@ function Inicio() {
                   className="row"
                   style={{
                     textAlign: "center",
-                    display: "flex",
+                    //display: "flex",
                     alignItems: "center",
                     flexWrap: "wrap",
                   }}
                 >
                   <div className="col-sm-4">
-                  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158722643700804&width=500&show_text=true&appId=1485452328231316&height=748" width="500" height="748" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                  <iframe 
+                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158722643700804&width=500&show_text=true&appId=1485452328231316&height=750" 
+                  width={500}
+                  height={750} 
+                  style={{ border: "none", overflow: "hidden", backgroundColor: "#fff" }}
+                  scrolling="no" 
+                  frameBorder={0}
+                  allowFullScreen={true}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  />
 
                     <hr />
                   </div>
                   <div className="col-sm-4">
-                  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158722642245804&width=500&show_text=true&appId=1485452328231316&height=665" width="500" height="665" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                  <iframe 
+                  src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158722642245804&width=500&show_text=true&appId=1485452328231316&height=750" 
+                  width={500}
+                  height={750}
+                  style={{ border: "none", overflow: "hidden", backgroundColor: "#fff" }}
+                  scrolling="no" 
+                  frameBorder={0}
+                  allowFullScreen={true}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  />
 
                     <hr />
                   </div>
                   <div className="col-sm-4">
-                  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158722641775804&width=500&show_text=true&appId=1485452328231316&height=735" width="500" height="735" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                  <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Falientometal%2Fposts%2F10158722641775804&width=500&show_text=true&appId=1485452328231316&height=750" 
+                  width={500} 
+                  height={750} 
+                  style={{ border: "none", overflow: "hidden", backgroundColor: "#fff" }}
+                  scrolling="no" 
+                  frameBorder={0}
+                  allowFullScreen={true}
+                  allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                  />
 
                     <hr />
                   </div>
