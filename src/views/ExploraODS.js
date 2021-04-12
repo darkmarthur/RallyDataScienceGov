@@ -277,71 +277,73 @@ function ExploraODS() {
     setLoading(false);
   }
 
+  const cyRef = useRef(null);
+  const cyPopperRef = useRef(null);
+
+  useEffect(() => {
+    const cy = cyRef.current;
+
+    cy.nodes().on('mouseover', (event) => {
+
+      cyPopperRef.current = event.target.popper({
+        content: () => {
+
+          let div = document.createElement('div');
+          // adding id for easier JavaScript control
+          //div.id = tooltipId;
+
+          // adding class for easier CSS control
+          div.classList.add('target-popper');
+
+          let table = document.createElement('table');
+          div.append(table);
+          let targetData = event.target.data();
+          const propiedades = ["EdgeCount", "Monto", "PP_por_Monto", "Redundancy", "LatapyClustering", "Aplicabilidad"]
+          for (let prop in targetData) {
+            if (!targetData.hasOwnProperty(prop)) continue;
+  
+            let targetValue = targetData[prop];
+            // no recursive or reduce support
+            if (!propiedades.includes(prop)) continue;
+            if (typeof targetValue === "object") continue;
+  
+            let tr = table.insertRow();
+  
+            let tdTitle = tr.insertCell();
+            let tdValue = tr.insertCell();
+  
+            tdTitle.innerText = prop;
+            tdValue.innerText = targetValue;
+          }
+      
+          //div.innerHTML = "<br><b>&nbsp;Name: "+event.target.data("name")+"</b></br>" + 
+          //"<br><b>&nbsp;Name: "+event.target.data("name")+"</b></br>";
+      
+          document.body.appendChild(div);
+      
+          return div;
+        },//createContentFromComponent("<b>"+ele.id()+"</b>"), // (<ReactButton />),<Button type="button">"<b>"+ele.id()+"</b>"</Button>
+        popper: {
+          placement: 'right',
+          removeOnDestroy: true,
+        },
+      });
+    });
+
+    cy.nodes().on('mouseout', () => {
+      if (cyPopperRef) {
+        cyPopperRef.current.destroy();
+      }
+    });
+  }, []);
+
+  //const elements = {
+  //  ...
+  //};
+
   function cytosGraph(network) {
 
-    const cyRef = useRef(null);
-    const cyPopperRef = useRef(null);
-  
-    useEffect(() => {
-      const cy = cyRef.current;
-  
-      cy.nodes().on('mouseover', (event) => {
 
-        cyPopperRef.current = event.target.popper({
-          content: () => {
-
-            let div = document.createElement('div');
-            // adding id for easier JavaScript control
-            //div.id = tooltipId;
-
-            // adding class for easier CSS control
-            div.classList.add('target-popper');
-
-            let table = document.createElement('table');
-            div.append(table);
-            let targetData = event.target.data();
-            const propiedades = ["EdgeCount", "Monto", "PP_por_Monto", "Redundancy", "LatapyClustering", "Aplicabilidad"]
-            for (let prop in targetData) {
-              if (!targetData.hasOwnProperty(prop)) continue;
-    
-              let targetValue = targetData[prop];
-              // no recursive or reduce support
-              if (!propiedades.includes(prop)) continue;
-              if (typeof targetValue === "object") continue;
-    
-              let tr = table.insertRow();
-    
-              let tdTitle = tr.insertCell();
-              let tdValue = tr.insertCell();
-    
-              tdTitle.innerText = prop;
-              tdValue.innerText = targetValue;
-            }
-        
-            //div.innerHTML = "<br><b>&nbsp;Name: "+event.target.data("name")+"</b></br>" + 
-            //"<br><b>&nbsp;Name: "+event.target.data("name")+"</b></br>";
-        
-            document.body.appendChild(div);
-        
-            return div;
-          },//createContentFromComponent("<b>"+ele.id()+"</b>"), // (<ReactButton />),<Button type="button">"<b>"+ele.id()+"</b>"</Button>
-          popper: {
-            placement: 'right',
-            removeOnDestroy: true,
-          },
-        });
-      });
-  
-      cy.nodes().on('mouseout', () => {
-        if (cyPopperRef) {
-          cyPopperRef.current.destroy();
-        }
-      });
-    }, []);
-  
-    //const elements = {
-    //  ...
-    //};
 
 
     return (
