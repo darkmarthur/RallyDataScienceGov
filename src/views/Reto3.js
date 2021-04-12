@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { SRLWrapper } from "simple-react-lightbox";
 
 // reactstrap components
@@ -207,6 +208,14 @@ function Reto3() {
                   El rally se divide en 3 retos y podrás acceder a nuestros
                   resultados correspondientes en el menú lateral del sitio
                 </p>
+                <NavLink
+                  to={"/reto2"}
+                  className="nav-link"
+                  activeClassName="active"
+                  onClick={() => {}}
+                >
+                  <a href="#">LINK</a>
+                </NavLink>
                 <div
                   className="row"
                   style={{
