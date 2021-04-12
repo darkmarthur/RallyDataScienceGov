@@ -100,8 +100,14 @@ function Inicio() {
                   <hr />
               <p>
                   El rally se divide en 3 retos y podrás acceder a nuestros
-                  resultados correspondientes en el menú lateral del sitio
+                  resultados correspondientes en el menú lateral del sitio o acceder
+                   directamente a lo correspondiente al reto 3 en los siguientes enlaces.
                 </p>
+                <ul>
+                <li><a href="/#/reto3">Propuesta para el reto 3</a></li>
+                <li><a href="/#/explora">Visualización de los modelos de redes</a></li>
+                <li><a href="/#/Blog">Blog donde describimos el proceso que seguimos</a></li>
+                </ul>
                 <hr />
                 <h1>Publicaciones del reto 3</h1>
                 <div
