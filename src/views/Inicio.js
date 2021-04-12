@@ -1,6 +1,7 @@
 import React from "react";
 
 // reactstrap components
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { Card, CardHeader, CardBody, CardTitle, Row, Col } from "reactstrap";
 
 function Inicio() {
@@ -104,9 +105,30 @@ function Inicio() {
                    directamente a lo correspondiente al reto 3 en los siguientes enlaces.
                 </p>
                 <ul>
-                <li><a href="/#/reto3">Propuesta para el reto 3</a></li>
-                <li><a href="/#/explora">Visualización de los modelos de redes</a></li>
-                <li><a href="/#/Blog">Blog donde describimos el proceso que seguimos</a></li>
+                <li><NavLink
+                  to={"/reto3"}
+                  className="nav-link"
+                  activeClassName="active"
+                  onClick={() => {}}
+                >
+                  <a href="#">Propuesta para el reto 3</a>
+                </NavLink></li>
+                <li><NavLink
+                  to={"/explora"}
+                  className="nav-link"
+                  activeClassName="active"
+                  onClick={() => {}}
+                >
+                  <a href="#">Visualización de los modelos de redes</a>
+                </NavLink></li>
+                <li><NavLink
+                  to={"/Blog"}
+                  className="nav-link"
+                  activeClassName="active"
+                  onClick={() => {}}
+                >
+                  <a href="#">Blog donde describimos el proceso que seguimos</a>
+                </NavLink></li>
                 </ul>
                 <hr />
                 <h1>Publicaciones del reto 3</h1>
