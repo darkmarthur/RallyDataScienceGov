@@ -218,7 +218,127 @@ function Reto3() {
                 </p>
                 <hr />
 
+                <hr />
+                <h3>Resultados</h3>
+                <SRLWrapper>
+                <div
+                    className="row"
+                    style={{
+                      textAlign: "center",
+                      display: "flex",
+                      alignItems: "center",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="Radio de Atención para los Programas Presupuestales de contribución directa con presupuesto en el PEF"
+                        className="poninterImg"
+                        src={require("assets/img/Results/RA/PP_1_inPEF.gif").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="Radio de Atención para los Programas Presupuestales de contribución directa con presupuesto en el PEF"
+                        className="poninterImg"
+                        src={require("assets/img/Results/RA/PP_2_inPEF.gif").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/Results/RA/PP_1_vinc.gif").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/Results/RA/PP_2_vinc.gif").default}
+                      />
+                    </div>
+                  </div>
+                  <hr />
+                  <div
+                    className="row"
+                    style={{
+                      textAlign: "center",
+                      display: "flex",
+                      alignItems: "center",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/Results/Core_Accesory/2.5.png").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/Results/Core_Accesory/Core.gif").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/Results/Core_Accesory/2.6.png").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="..."
+                        className="poninterImg"
+                        src={require("assets/img/Results/Core_Accesory/LosRedundancy.png").default}
+                      />
+                    </div>
+                  </div>
 
+                  <div
+                    className="row"
+                    style={{
+                      textAlign: "center",
+                      display: "flex",
+                      alignItems: "center",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="2018 Red Accesoria"
+                        className="poninterImg"
+                        src={require("assets/img/Results/Core_Accesory/2018_Accessory_PP_radial.png").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="2019 Red Accesoria"
+                        className="poninterImg"
+                        src={require("assets/img/Results/Core_Accesory/2019_Accessory_PP_radial.png").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="2020 Red Accesoria"
+                        className="poninterImg"
+                        src={require("assets/img/Results/Core_Accesory/2020_Accessory_PP_radial.png").default}
+                      />
+                    </div>
+                    <div className="col-sm-1 col-md-6 col-lg-3">
+                      <img
+                        alt="2021 Red Accesoria"
+                        className="poninterImg"
+                        src={require("assets/img/Results/Core_Accesory/2021_Accessory_PP_radial.png").default}
+                      />
+                    </div>
+                  </div>
+                  
+                </SRLWrapper>
 
 
                 <h3>Fuentes</h3>
