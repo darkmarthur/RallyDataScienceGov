@@ -5,6 +5,7 @@
   "homepage": "https://darkmarthur.github.io/RallyDataScienceGov",
   "dependencies": {
     "@fortawesome/fontawesome-free": "5.15.1",
+    "@material-ui/core": "^4.11.3",
     "bootstrap": "4.5.3",
     "chart.js": "2.9.4",
     "classnames": "2.2.6",
