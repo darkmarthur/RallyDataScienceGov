@@ -28,15 +28,25 @@ function Reto3() {
                   Rally de Datos: Explorando Datos para el Desarrollo Sostenible
                   </p>
                   
-                  <p style={{textAlign: 'justify'}}>Este marco de trabajo facilita el análisis y seguimiento del presupuesto así como la identificación de patrones para su asignación en el cumplimiento de los ODS y hacia el cumplimiento de la Agenda 2030.</p>
+                  <p style={{textAlign: 'justify'}}>Este marco de trabajo facilita el análisis y seguimiento del presupuesto así como la identificación de patrones para su asignación
+                   en el cumplimiento de los ODS y hacia el cumplimiento de la Agenda 2030.</p>
                   <p>&nbsp;</p>
                   <h2>Introducción</h2>
-                  <p style={{textAlign: 'justify'}}>La base del desarrollo sostenible se encuentra en el presupuesto gubernamental. Sin importar el ODS en el que estemos interesados, no hay un impacto real sobre este objetivo si no se han destinado suficientes recursos públicos para asegurar su implementación. Si queremos reforzar el compromiso entre el gobierno y los ciudadanos debemos no solo garantizar y facilitar el acceso de la población a la información presupuestaria sino proveer herramientas para facilitar su participación dentro del proceso presupuestal. </p>
+                  <p style={{textAlign: 'justify'}}>La base del desarrollo sostenible se encuentra en el presupuesto gubernamental. Sin importar el ODS en el que estemos interesados,
+                   no hay un impacto real sobre este objetivo si no se han destinado suficientes recursos públicos para asegurar su implementación. Si queremos reforzar el compromiso 
+                   entre el gobierno y los ciudadanos debemos no solo garantizar y facilitar el acceso de la población a la información presupuestaria sino proveer herramientas para 
+                   facilitar su participación dentro del proceso presupuestal. </p>
                   <p style={{textAlign: 'justify'}}>&nbsp;</p>
-                  <p style={{textAlign: 'justify'}}><span>Para acercar a los ciudadanos al proceso presupuestal nuestra propuesta de política pública es establecer un </span><span style={{fontWeight: 700}}>Observatorio Ciudadano del destino presupuestal enfocado al cumplimiento de los Objetivos de Desarrollo Sostenible (ODS) </span>que permita fortalecer la habilidad ciudadana para analizar el presupuesto, dar seguimiento e involucrarse en el debate en torno al presupuesto para participar en la toma de decisiones. Con el fomento de una sociedad mås participativa esperamos incentivar al gobierno a mejorar la planeación, el gasto y su reporte para el cumplimiento de los ODS.</p>
-                  <p style={{textAlign: 'justify'}}>Para avanzar en lograr este fin proporcionamos una base de datos curada y la visualización de un modelo de red bipartita representando la relación entre los ODS con los Programas Presupuestarios (PPs) del Presupuesto de Egresos de la Federación (PEF). </p>
+                  <p style={{textAlign: 'justify'}}><span>Para acercar a los ciudadanos al proceso presupuestal nuestra propuesta de
+                     política pública es establecer un </span><span style={{fontWeight: 700}}>Observatorio Ciudadano del destino presupuestal enfocado 
+                     al cumplimiento de los Objetivos de Desarrollo Sostenible (ODS) </span>que permita fortalecer la habilidad ciudadana para analizar 
+                     el presupuesto, dar seguimiento e involucrarse en el debate en torno al presupuesto para participar en la toma de decisiones. Con el
+                      fomento de una sociedad mås participativa esperamos incentivar al gobierno a mejorar la planeación, el gasto y su reporte para el cumplimiento de los ODS.</p>
+                  <p style={{textAlign: 'justify'}}>Para avanzar en lograr este fin proporcionamos una base de datos curada y la visualización de un mo
+                  delo de red bipartita representando la relación entre los ODS con los Programas Presupuestarios (PPs) del Presupuesto de Egresos de la Federación (PEF). </p>
                   <p style={{textAlign: 'justify'}}>&nbsp;</p>
-                  <p style={{textAlign: 'justify'}}>La importancia de nuestra propuesta radica en utilizar técnicas tomadas de la Ciencia de Redes para analizar los documentos presupuestarios.</p>
+                  <p style={{textAlign: 'justify'}}>La importancia de nuestra propuesta radica en utilizar técnicas tomadas de la Ciencia de Redes para
+                   analizar los documentos presupuestarios.</p>
                   <p>&nbsp;</p>
                   <p>Hasta el momento proporcionamos:</p>
                   <ul><li>Una base de datos con información curada del 2018 al 2021 de:</li>
@@ -138,9 +148,79 @@ function Reto3() {
                     </div>
                   </div>
                   
-
                 </SRLWrapper>
                 <hr />
+                <h2>Medidas implementadas</h2>
+                <p>
+                <ul>
+                <li>Radio de Atención</li>
+                <li>Coeficiente de Metamorfósis</li>
+                <li>Coeficiente de Agrupamiento</li>
+                <li>Densidad</li>
+                <li>Coeficiente de Redundancia</li>
+
+                </ul>
+                </p>
+                <h3>Radio de Atención</h3>
+                <p style={{textAlign: 'justify'}}>
+                Los ODS contemplan 169 metas, que a nivel nacional pueden abarcar distintos ámbitos de atención, es por esto que la SHCP en conjunto con el PNUD 
+                implementó un catálogo de submetas, en las que se dividen 102 de las 169 metas. De tal manera que, si una meta incluye distintos ámbitos de atención, 
+                esta es desagregada en de 1 a 6 submetas. Ya que los programas presupuestarios pueden estar relacionados con uno o varios ámbitos de atención, y tomando 
+                en cuenta que no todas las metas se dividen en la misma cantidad de submetas, establecimos el Radio de Atención (RA) como una medida que nos 
+                permite comparar la cobertura de ámbitos entre PPs dentro de una escala de 0 a 1.
+                <hr />
+                Definimos el Radio de atención como:
+                <hr />
+                <img
+                  alt="..."
+                  className="squaredImg"
+                  style={{
+                    backgroundColor: "#fff",
+                    borderRadius: 30,
+                    width: "20%",
+                  }}
+                  src={require("assets/img/RA_Formula.png").default}
+                />
+                <hr />
+                Donde:
+                sm_Mmax máximo número de submetas de la meta de los ODS.
+                smpp = submetas por Programa Presupuestario (PP)
+                <hr />
+                Una vez que establecimos el cálculo del RA elegimos representar esta medida para cada meta de los ODS 1 al 16. Cada columna corresponde a un ODS y 
+                cada fila representa la meta respectiva al ODS. Dado que no todos los ODS tienen el mismo número de metas, hay recuadros que no se llenan. El tamaño 
+                del círculo representa la cantidad de PPs mientras la escala de color es el promedio del Radio de Atención entre los PPs que contribuyen a esa meta.
+                Al comparar los PPs que cuentan con presupuesto aprobado en el PEF desde el 2018 al 2021 identificamos que el enfoque hacia algunas metas ha sido 
+                principalmente el aumento de la cantidad de PPs, en algunos casos el RA se ha mantenido, en otros incluso ha disminuido. Por ejemplo, en las submetas 
+                2.2, 2.3, 8.5 y 16.3 se ha incrementado el número de PPs. Sin embargo, este aumento no se ve reflejado también en un aumento de su Radio de Atención 
+                del cumplimiento de las metas a los cuales fueron asignados. Es decir, está aumentando el número de PPs sin que esto se refleje en un incremento hacia 
+                el cumplimiento total de la meta. Por otro lado, entre los PPs del archivo de vinculación y los que tienen presupuesto aprobado para el 2021 en las metas 
+                9.3, 2.5, 2.6, y 11.6 observamos una disminución de la cantidad de PPs y a su vez un aumento en su RA. Por ello es necesario tener en cuenta que el número 
+                de PPs, por sí mismo, no significa que se esté poniendo mayor o menor atención en el cumplimiento de metas, de igual manera una mayor selección de PPs que 
+                nos den un alto RA.  Basta con una pequeña cantidad de PPs de alto espectro para tener los objetivos cubiertos de una meta (alto RA). Cada caso debe 
+                revisarse de manera individual, en un análisis más profundo que podría llevarnos a evaluar si está habiendo una mejor selección de PPs, optando por 
+                PPs de un mayor RA o se están dejando atrás áreas de atención. Esta es una manera de evidenciar qué metas es necesario revisar y poner especial 
+                atención, para evitar que se deje sin presupuesto a PPs con alto RA, como en los destinados las metas 7.4, 12.7, 14.4, 15.10; pues se estarían dejando 
+                sin recursos a PPs de amplio espectro que ayudan al cumplimiento total de la meta en cuestión.
+                <hr />
+                Al implementar este análisis, podríamos tener un ahorro y uso más eficiente del presupuesto al replantear objetivos de los PPs presentes inicialmente 
+                para aumentar el espectro de atención, en lugar de aumentar la cantidad de PPs que podrían tener características redundantes. Es por ello que proponemos 
+                que si es necesario el aumento de PPs, estos PPs deben ser diseñados para tener un alto espectro de atención así como mantener una diversidad de enfoques.
+
+
+                </p>
+                <p style={{textAlign: 'justify'}}>
+
+                  
+                </p>
+                <p style={{textAlign: 'justify'}}>
+
+                  
+                </p>
+                <hr />
+
+
+
+
                 <h3>Fuentes</h3>
                 <p>
                 <ul>
