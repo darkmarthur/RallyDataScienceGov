@@ -1,10 +1,11 @@
 import React from "react";
-
 // reactstrap components
 import { Card, CardBody, Row, Col } from "reactstrap";
 
 function Reto1() {
+  
   return (
+    
     <>
       <div className="content">
         <Row>
@@ -16,6 +17,7 @@ function Reto1() {
                 </CardTitle>
               </CardHeader> */}
               <CardBody>
+                
                 <h1>Biodiversidad y Acciones por el Clima</h1>
                 <h2>Acciones del PEF 2021 - Agenda 2030</h2>
                 <p>
@@ -43,16 +45,20 @@ function Reto1() {
                   destino de los recursos públicos.
                 </p>
                 <hr />
+
                 <img
                   alt="..."
                   className="squaredImg"
                   style={{
                     backgroundColor: "#fff",
                     borderRadius: 30,
-                    width: "100%",
+                    width: "50%",
                   }}
                   src={require("assets/img/graph1.png").default}
                 />
+
+
+                
                 <hr />
                 <p style={{ textAlign: "justify" }}>
                   Dentro de la temática de Biodiversidad y Acciones por el clima
@@ -86,7 +92,7 @@ function Reto1() {
                   style={{
                     backgroundColor: "#fff",
                     borderRadius: 30,
-                    width: "100%",
+                    width: "50%",
                   }}
                   src={require("assets/img/graph3.png").default}
                 />
@@ -108,7 +114,7 @@ function Reto1() {
         </Row>
       </div>
     </>
+    
   );
 }
-
 export default Reto1;
